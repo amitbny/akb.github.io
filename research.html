@@ -1,0 +1,340 @@
+<html>
+<head>
+<CENTER> <font size="5" face="Palatino" color="#241C02"> <i>Research Problems</i></font>  
+</CENTER>
+<!body text="#717D7D" link="#0000FF" vlink="#339966" bgcolor="#FFFFFF">
+<body text="#717D7D" link="#339966" vlink="#339966" bgcolor="#FFFFFF">
+
+<font size="4" face="Palatino">
+<CENTER> 
+<P>
+<hr size="3" align="center" width="50%" color="#6D7B8D">
+<hr size="1" align="center" width="50%" color="#6D7B8D">
+
+::<a style="text-decoration: none" href="index.html"> Home </a> : 
+  <a style="text-decoration: none" href="CV_Amit.pdf"> CV </a> : 
+  <a style="text-decoration: none" href="research.html"> Research </a> : 
+  <a style="text-decoration: none" href="publications.html"> Publications</a> : 
+  <a style="text-decoration: none" href="teaching.html"> Teaching</a> : 
+  <a style="text-decoration: none" href="leisure.html"> Leisure </a> :: 
+
+</CENTER>
+</font>
+</H4>
+<hr size="1" align="center" width="50%" color="#6D7B8D">
+<hr size="3" align="center" width="50%" color="#6D7B8D">
+
+</head>
+
+<body text="#717D7D" link="#99C68E" vlink="#C8B560" bgcolor="#FFFFFF">
+
+<CENTER>
+<font size="4" face="Palatino">
+<font color="#2C3539"> <h4><span style="font-weight: normal;">"Resistentiam, quae oritur ex defectu lubricitatis partium fluidi, caeteris paribus, proportionalem esse velocitati, qua partes fluidi separantur ab invicem." - and then we start!  </span></h4></font>
+</font>
+</CENTER>
+
+<P>
+
+<font size="3" face="Palatino">
+My work comprises of a balance between analytic calculations and numerical computation to understand 
+different material properties that can be accessed via experiments as well as theoretic challenges. 
+Within the <i>classical physics </i> domain, my scientific interest is distributed into studying, 
+a) multispecies diffusion in a miscible non-ideal liquid mixture, b) statics and kinetics of liquid 
+crystals and c) Shear response of dense colloidal melt. They are briefly described below. 
+Here is a comprehensive list of developed computational benchmarks: 
+     <UL>
+     <P align="LEFT">
+     <LI> `Stochastic electronematics' solver in three dimensional anisotropic fluids under nonuniform electric field.  
+     <LI> Kinetic Monte Carlo (SSA) integrator, GENERIC and Chemical Langevin equation (CLE) integrator 
+          for dimerization and bistable reactive system.
+     <LI> Compressible fluctuating hydrodyamics solver for binary reactive gas in 2D/3D using BoxLib.
+     <LI> <a style="text-decoration: none" href="https://github.com/BoxLib-Codes/LowMachMixtures"> <span style="font-weight: bold;"> 
+          Low-Mach number fluctuating hydrodyamics integrator </span></a> for quasi-incompressible flow in multispecies mixture in 
+          2D/3D using BoxLib.
+     <LI> Dissipative particle dynamics (DPD) 3D solver for Yukawa and WCA potential with Lees-Edwards boundary for sheared suspensions.
+     <LI> Data parallel (cross-platform) uniaxial/biaxial nematic PDE integrator in three dimensions using GSL, 
+          <a style="text-decoration: none" href="https://github.com/amitbny/nempy"> <span style="font-weight: bold;"> Python</span></a> 
+          and PETSc (implicit and explicit).  
+     <LI> Extensive data parallel (cross-platform) Allen-Cahn solver in three dimensions (implicit and explicit). 
+     <LI> Stochastic method of lines integrator for thermal isotropic and nematogenic systems. 
+     <LI> Deterministic model-A and nematic integrator using Spectral Collocation scheme.
+     <LI> Alternate direction implicit (ADI) operator splitting PDE integrator for (active) motor-microtrubule mixture. 
+     </UL>
+
+<left>
+<font size="2" face="Palatino">
+<hr size="1" align="center" width="65%" color="#6D7B8D">
+<font color="#2C3539"> <h2><span style="font-weight: bold;"><center>  Topological defects in nucleation and spinodal kinetics of uniaxial and biaxial nematics </center></span></h2></font>
+<hr size="1" align="center" width="65%" color="#6D7B8D">
+</font>
+</left>
+
+<P>
+<figure>
+<div align="center">
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/pic01.jpg"
+             width="160"
+             height="170" />
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/pic03.jpg"
+             width="130"
+             height="130" />
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/SN.jpg"
+             width="140"
+             height="140" />
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/biaxdef1.png"
+             width="260"
+             height="130" />
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/SNdrop_L2gt69.jpg"
+             width="140"
+             height="200" />
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/nucl.gif"
+             width="220"
+             height="170"/>
+<center><figcaption>Fig.[10-15]</figcaption></center>
+</figure>
+</div>
+<P>
+In this work, we have constructed Langevin equations describing the fluctuations of the orientational tensor by adding
+noise terms to time-dependent variational equations, with a requirement for the noise to preserve the symmetry
+and tracelessness of the tensor order, and satisfying Einstein's fluctuation-dissipation relation at thermal
+equilibrium. The method is validated by comparing equilibrium probability distributions, static structure and
+dynamic correlations with analytic predictions. With the developed method, we have studied capillary waves in
+fluctuating isotropic-nematic interface, scaling behaviour and defect morphology in the spinodal kinetics
+as well as spontaneous generation of nematic droplet in fluctuating isotropic bath as well as isotropic droplets
+in nematic medium. Along with the thesis, details of the numerical study, benchmarks and results are highlighted
+here,
+<UL>
+     <LI> Controlling motile disclinations in a thick nematogenic material with an electric field, 
+         <span style="font-weight:bold;">A.K. Bhattacharjee</span>, [<i>Submitted</i>] (2017). 
+     <LI> <a style="text-decoration: none"href="http://www.nature.com/articles/srep40059"> Stochastic kinetics reveal 
+          imperative role of anisotropic interfacial tension to determine morphology and evolution of nucleated droplets 
+          in nematogenic films</a>, <span style="font-weight:bold;">A.K. Bhattacharjee</span>, <i>Nature Sci. Rep.</i> </i><span style="font-weight:bold;"> 7</span>, 
+          40059</a> (2017). 
+     <LI> <a style="text-decoration: none"href="http://jcp.aip.org/resource/1/jcpsa6/v133/i4/p044112_s1?isAuthorized=no"> Fluctuating
+          dynamics of nematic liquid crystals using the stochastic method of lines </a>, <span style="font-weight:bold;">A.K. Bhattacharjee</span>, G.I. Menon
+         and R. Adhikari, <i>J. Chem. Phys.</i>, <span style="font-weight: bold;"> 133</span>, 044112 (2010).
+
+</UL>
+
+We have developed novel visualization methods as well as defect finding
+algorithm that classifies point and line defects in two and three dimensions. Also, we have studied the
+anisotropic effects of elasticity to the nucleation kinetics of nematics. Fig-10 depicts the line defects 
+in bulk material, while Fig-11,12 depicts <i>schlieren texture</i> and order/director distribution in a 
+uniaxial nematics during coarsening. Fig-13 shows finally two class of biaxial defects. These are animated 
+<a style="text-decoration: none"href="https://www.youtube.com/playlist?list=PL7F62606B554B63A6&feature=mh_lolzyoutube"> <span style="font-weight: bold;"> here</span> </a>. 
+Fig-14 shows a snapshot of nucleating ellipsoidal 3D droplet while Fig-15 shows the director anchoring on the surface of a droplet. 
+The animations can be viewed 
+<a style="text-decoration: none"href="https://www.youtube.com/playlist?list=PLeEEG8xDJcOT9TJJOIZOZiwHEjKoBnrrj"> <span style="font-weight: bold;"> here</span> </a>.
+<br>
+<P>
+
+<left>
+<font size="2" face="Palatino">
+<hr size="1" align="center" width="70%" color="#6D7B8D">
+<font color="#2C3539"> <h2><span style="font-weight: bold;"> <center>Dimerization reaction in chemically reactive gas under flow </center></span></h2></font>
+<hr size="1" align="center" width="70%" color="#6D7B8D">
+</font>
+</left>
+<P>
+<figure>
+<div align="center">
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/chem_GF.jpg"
+             width="200"
+             height="170"/>
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/U_high_30000.png"
+             width="160"
+             height="140"/>
+<left><figcaption>Fig.[8-9]</figcaption></left>
+</figure>
+</div>
+
+We have formulated a coupling between <i>compressible fluctuating hydrodynamics</i> equations for multispecies gas to the
+<i>Law of mass action</i> to study dimerization reaction, e.g. two H-atoms forming a Hydrogen molecule, in a chemically reactive
+ideal gas. We show that a large scale non-equilibrium fluctuation in the presence of concentration gradients is suppressed due
+to the chemical reactions. This is shown in fig(8) which can be compared to the response in non-reactive mixtures fig(6). We
+also have compared different existing numerical methodology (e.g. GENERIC formalism, chemical Master equation, chemical Langevin 
+equation etc) to predict accurate chemical kinetics for systems with small number of atoms/molecules. Finally we also compare 
+the pattern formation, a high noise late time snapshot for one species in Baras-Pearson-Mansour model is shown in fig[9]. More 
+details are published here:
+    
+<UL>
+<LI> <a style="text-decoration: none"href="http://scitation.aip.org/content/aip/journal/jcp/142/22/10.1063/1.4922308"> Fluctuating 
+          hydrodynamics of multispecies reactive mixtures</a>, <br> A. K. Bhattacharjee, K. Balakrishnan, A. L. Garcia,
+          J. B. Bell and A. Donev, <i> J. Chem. Phys.</i><span style="font-weight:bold;"> 142</span>, 224107 (2015). <br><br>
+</UL>
+
+<left>
+<font size="2" face="Palatino">
+<hr size="1" align="center" width="60%" color="#6D7B8D">
+<font color="#2C3539"> <h2><span style="font-weight: bold;"><center> Diffusion in multispecies nonideal liquid under external forces</center> </span></h2></font>
+<hr size="1" align="center" width="60%" color="#6D7B8D">
+</font>
+</left>
+<P>
+<figure>
+<div align="center">
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/giant.jpg"
+             width="200"
+             height="170"/>
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/finger.gif"
+             width="160"
+             height="140"/>
+<left><figcaption>Fig.[6-7]</figcaption></left>
+</figure>
+</div>
+<P>
+
+We have formulated a <i>low-Mach number fluctuating hydrodynamics</i> equation for multispecies nonideal liquid,
+where fast isentropic fluctuations in pressure are eliminated by replacing the equation of state with a local thermodynamic
+constraint. We demonstate of large scale non-equilibrium fluctuation (Fig.[6]) in the presence of concentration gradients, reported
+in light-scattering experiments and shadowgraphy techniques. We had studied mixed-mode instability occuring on the miscible
+interface between sugarwater and saltwater in the presence of gravity. The buoyancy driven instability like double-diffusive
+effects and Rayleigh-Taylor instability with the mixed-mode instability triggers a <span style="font-weight: normal;">fingering
+instability</span> of the interface in a Hele-Shaw cell geometry as shown in Fig.[7]. Our findings with detailed numerical
+methodology is referenced here:
+
+<UL>
+
+    <LI> <a style="text-decoration: none"href="http://scitation.aip.org/content/aip/journal/pof2/27/3/10.1063/1.4913571"> Low Mach 
+          Number Fluctuating Hydrodynamics of Multispecies Liquid Mixtures</a>, <br> A. Donev, A. J. Nonaka, A. K. Bhattacharjee,
+          A. L. Garcia and J. B. Bell, <i>Physics of Fluids</i>, <span style="font-weight:bold;">27</span>, 037103 (2015). <br><br>
+ 
+</UL>
+
+<left>
+<font size="2" face="Palatino">
+<hr size="1" align="center" width="70%" color="#6D7B8D">
+<font color="#2C3539"> <h2><span style="font-weight: bold;"> <center>Bauschinger effect in supercooled melts under instantaneous shear reversal</center> </span></h2></font>
+<hr size="1" align="center" width="70%" color="#6D7B8D">
+</font>
+</left>
+<P>
+<figure>
+<div align="center">
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/shear-normal2.jpg"
+             width="220"
+             height="180"/>
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/bausch.jpg"
+             width="150"
+             height="150"/>
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/anisotropy.jpg"
+             width="140"
+             height="140"
+             rotate="0"/>
+&nbsp; &nbsp; &nbsp; &nbsp;
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/elconstG.jpg"
+             width="120"
+             height="120"/>
+<center><figcaption>Fig.[2-5]</figcaption></center>
+</figure>
+</div>
+<P>
+We have studied the nonlinear rheology of a glass-forming binary mixture under the reversal of shear ﬂow using
+dissipative particle dynamics simulations that validates Einstein's fluctuation dissipation relation in quiescent
+state. Planar Couette flow is established via Lees-Edwards boundary between particles interacting through a
+Weeks-Chandler-Andersen potential. Memory eﬀects lead to a history-dependent response of the melt, as
+exempliﬁed by the vanishing of a stress overshoot phenomenon in the stress–strain curves of the sheared
+liquid, and a change in the apparent elastic coeﬃcients around states with zero stress. The connection of this
+macroscopic response to single particle motion is demonstrated via particle mean squared displacement as well
+as the self-intermediate scattering function. The results are compared to the schematic mode coupling theory
+model of sheared glassy liquid where we find excellent agreement with the simulation. Figure(2) shows the
+overshoot of shear and normal stress in forward shear and no overshoot at instantaneous shear reversal.
+Figure(3) depicts of the local stress on individual particle at a stage where elasto-plastic rearrangements
+occur in forward shear while in figure(4), induced anisotropy due to shear is shown in shear-gradient plane,
+where particles are squeezed along the compressional axis and extended along the extensional axis. Figure (5)
+shows the coarse grained elastic map in forward shear at 1-percent strain, having different regions with higher
+and lower elastic constant. The references are inscribed below:
+
+<UL>
+     <LI> <a style="text-decoration: none"href="http://jcp.aip.org/resource/1/jcpsa6/v138/i12/p12A513_s1?isAuthorized=no"> 
+          On the Bauschinger effect in supercooled melts under shear: results from mode coupling theory and molecular dynamics 
+          simulation </a>, F. Frahsa, A.K. Bhattacharjee, J. Horbach, M. Fuchs and Th. Voigtmann, <i>J. Chem. Phys. 
+          (Special Topics on Glass Transition)</i>, <span style="font-weight: bold;"> 138</span>, 12A513 (2013).
+     <LI> <a style="text-decoration: none"href="http://pubs.rsc.org/en/content/articlelanding/2015/sm/c4sm02790f"> Stress-structure 
+          relation in dense colloidal melt under forward and instantaneous reversal of shear</a>, A.K. Bhattacharjee, <i>Soft 
+          Matter (RSC) </i> <span style="font-weight:bold;">11</span>, 5697 (2015).
+</UL>
+
+<left>
+<font size="2" face="Palatino">
+<hr size="1" align="center" width="50%" color="#6D7B8D">
+<font color="#2C3539"> <h2><span style="font-weight: bold;"> <center>de Gennes ansatz: nature of liquid-nematic interface </center></span></h2></font>
+<hr size="1" align="center" width="50%" color="#6D7B8D">
+</font>
+</left>
+
+<P>
+<figure>
+<div align="center">
+<img ALIGN="center" class="imageStyle"
+             alt="pastedGraphic"
+             src="picture/pic04.jpg"
+             width="240"
+             height="120" />
+<center><figcaption>Fig.[1]</figcaption></center>
+</figure>
+</div>
+<P>
+The work describes of statics and kinetics of liquid crystal phase transformation from an isotropic 
+liquid to uniaxial and biaxial nematic phase within the Ginzburg-Landau-deGennes (<span style="font-weight: bold;">GLdG</span>) approach. We 
+have developed a novel deterministic method of lines (MOL) solution to the dynamical equations of 
+the full orientational tensor describing the phase. Our method is benchmarked through the study of 
+the nature of coexisting <span style="font-weight: bold;">isotropic-nematic interface</span>, 
+<span style="font-weight: bold;">growth of nematic droplets</span> in the isotropic phase and the 
+<span style="font-weight: bold;">kinetics of coarsening</span> following a quench into the nematic phase. 
+Our results provide a stringent test of the <span style="font-weight: normal;"><font size="3" face="Palatino"> 
+<i> de Gennes ansatz</i> </font></span> (proposed in '70s) for the 
+isotropic-nematic interface, illustrate the anisotropic character of nematic droplets in the nucleation 
+regime and validate dynamical scaling in the coarsening regime with a clear separation of time scales 
+from diffusive to Porod's law scaling at late stages of the kinetics. Combined results are reported 
+here,
+<UL>
+    <LI> <a style="text-decoration: none"href="http://pre.aps.org/abstract/PRE/v78/i2/e026707"> Numerical Method 
+         of Lines for the Relaxational Dynamics of Nematic Liquid Crystals</a>, A.K. Bhattacharjee, G.I. Menon 
+         and R. Adhikari, <i>Phys. Rev. E</i>, <span style="font-weight: bold;"> 78</span>, 026707 (2008).
+</UL>
+
+We also have developed a spectral collocation scheme for the solution of the <span style="font-weight: bold;">
+GLdG</span> equations to comment about the nature of the interface as well as the role of anisotropic elastic 
+constants to the nematic director anchoring along the interface. These are compared with an approximate-analytic
+solutions (given by SM Kamil and GI Menon) and reported in the following articles,
+<UL>
+    <LI> <a style="text-decoration: none"href="http://pre.aps.org/abstract/PRE/v80/i4/e041705"> Biaxiality at the 
+         isotropic-nematic interface with planar anchoring</a>, S.M. Kamil, A.K. Bhattacharjee, R. Adhikari and 
+         G.I. Menon, <i>Phys. Rev. E</i>, <span style="font-weight: bold;"> 80</span>, 041705 (2009).
+    <LI> <a style="text-decoration: none"href="http://jcp.aip.org/resource/1/jcpsa6/v131/i17/p174701_s1?isAuthorized=no"> 
+         The isotropic-nematic interface with an oblique anchoring condition</a>, S.M. Kamil, A.K. Bhattacharjee, 
+         R. Adhikari and G.I. Menon, <i>J. Chem. Phys.</i>, <span style="font-weight: bold;"> 131</span>, 174701 (2009). 
+</UL>
+<br> 
+<P>
+</html>

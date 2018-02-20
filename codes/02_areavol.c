@@ -1,12 +1,13 @@
-/* Regn.No.: ; Area and volume of different geometry */
-/* Get a feeling of int and float by printing 2/3 */
-
+/* Regn.No.: ; Area and volume of different geometry 
+   Get a feeling of int and float by printing fractions */
 
 #include<stdio.h>
 #include<math.h>
+
 int main(){
 
- int circle=0,sphere=0,cylinder=1;
+ /* Use an integer switch */
+ int circle=0, sphere=0, cylinder=1; 
 
  /* Area of circle */
  if(circle){ 
@@ -41,7 +42,7 @@ int main(){
     scanf("%d %d",&r,&h);
     vol = M_PI*pow(r,2)*h;
     printf("Volume of cylinder is %f\n", vol);
-
+ 
  }
 
 return 0;

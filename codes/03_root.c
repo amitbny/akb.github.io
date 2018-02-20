@@ -3,14 +3,16 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
-int main(){
- 
-  float a,b,c,root1,root2;
-  float realp,imagp,discr;
-  printf("Enter the values of a, b & c\n");
-  scanf("%f %f %f",&a,&b,&c);
 
-  /* If a=0, it is not a quadratic function */
+int main(){
+
+  /* Type Declaration */ 
+  float a, b, c, root1, root2;
+  float realp, imagp, discr;
+  printf("Enter the values of a, b & c\n");
+  scanf("%f %f %f",&a, &b, &c);
+
+  /* If a or b or c is 0, it is not a quadratic equation, so exit */
   if(a==0 || b==0 || c==0){
     printf("Error: Roots cannot be determined");
     exit(1);

@@ -1,29 +1,29 @@
-/* Mean/Median Code */
+/* Code to compute Mean, Median & Mode */
 
 #include<stdio.h>
-#include<stdlib.h>
 #include<math.h>
 
 int main(){
- 
- //int i,j,k,tmp,n,sum=0,*a; 
- int   i,j,k,tmp,n,sum=0,a[20], tally[20];
- int   maxCount=0, mode=0;
+
+ /* Type declaration */ 
+ int   i, j, k, tmp, n, a[20], tally[20];
+ int   sum=0, maxCount=0, mode=0;
  float mean=0.0, median=0.0;
 
+ /* Input the series from keyboard */
  printf("Enter the number of inputs\n");
  scanf("%d",&n);
- 
- //a = (int*) malloc(n*sizeof(int));
  
  printf("Enter the numbers\n");
  for(i=1; i<=n; i++){
      scanf("%d",&a[i]);
      sum = sum + a[i];
  }
-
- /* Calculate mean */ 
+ 
+ /* Calculate mean : average of array */ 
  mean = (float)sum/n;
+ 
+ /* Perform Bubble sorting */ 
  for(i=1; i<=n; i++){
     for(j=1; j<=n-i; j++){
         if(a[j]>a[j+1]){
@@ -33,13 +33,12 @@ int main(){
         }
      }
  }
- 
  printf("The numbers in ascending order are\n");
  for(i=1; i<=n; i++){
    printf("%d ",a[i]);
  }
 
- /* Calculate median */ 
+ /* Calculate median : find out the middle of sorted array */ 
  if(n%2==0){
     median = (a[n/2]+a[n/2+1])/2.0;
  }
@@ -47,10 +46,10 @@ int main(){
     median = a[(n+1)/2];
  }
  
- /* Calculate mode */ 
+ /* Calculate mode: find out tally and Count the maximum */ 
  for(i=1; i<=n; i++){
-    for(k=i; k<=n; k++){
-       if(a[i]==a[k]) tally[i]++;
+    for(j=i; j<=n; j++){
+       if(a[i]==a[j]) tally[i]++;
     }
  }
     

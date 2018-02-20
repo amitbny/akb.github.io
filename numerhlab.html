@@ -1,0 +1,42 @@
+<html>
+<head>
+<CENTER> <font size="5" face="Palatino" color="#241C02"> <i>Computer Laboratory</i></font>  
+</CENTER>
+<body text="#717D7D" link="#339966" vlink="#339966" bgcolor="#FFFFFF">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript"> $(function () { $(this).bind("contextmenu", function (e) { e.preventDefault(); }); }); </script>
+   <script>
+document.onkeydown = function(e) {
+        if (e.ctrlKey &&
+            (e.keyCode === 85 )) {
+            return false;
+        }
+};
+</script>  
+
+<SCRIPT>
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "numasuphsa18") {
+window.open('https://amitbny.github.io/akb.github.io/numerlabVIIIB.html');
+break;
+}
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+}
+if (pass1.toLowerCase()!="password" & testV ==3) 
+history.go(-1);
+return " ";
+} 
+</SCRIPT>
+<CENTER>
+<FORM>
+<input type="button" value="Restricted Access (for Asutosh College students only)" onClick="passWord()">
+</FORM>
+</CENTER>
+</html> 

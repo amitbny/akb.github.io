@@ -6,14 +6,11 @@
 
 int main(){
  
- // int i,j,t,n,sum=0,a[20]; 
- int i,j,t,n,sum=0,*a; 
+ int i,j,t,n,sum=0,a[20]; 
  float mean, median;
 
  printf("Enter the number of inputs\n");
  scanf("%d",&n);
- 
- a = (int*) malloc(n*sizeof(int));
  
  printf("Enter the numbers\n");
  for(i=1; i<=n; i++){
@@ -40,7 +37,6 @@ int main(){
     median = (a[n/2]+a[n/2+1])/2.0;
  }
  else if(n%2!=0){
-    printf("Executing this\n");
     median = a[(n+1)/2];
  }
  printf("\nmean = %f\n",mean);

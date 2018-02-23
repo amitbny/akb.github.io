@@ -16,7 +16,7 @@ is first term of GP.
 int main(){
 
   /* Switch to choose whether ap (=1) or gp (=0) */ 
-  int ap=0;
+  int ap=1;
 
   /* Type declaration */ 
   int first, diff, ratio, terms, value, i, sum=0;
@@ -32,7 +32,7 @@ int main(){
     /* print the series and add all elements to sum */
     value = first;
     printf("AP Series is\n");
-    for(i = 0; i < terms; i++) {
+    for(i = 0; i < terms; i++){
         printf("%d ", value);
         sum += value;
         value = value + diff;
@@ -40,7 +40,7 @@ int main(){
     printf("\nSum of the AP series till %d terms is %d\n", terms, sum);
 
   }
-  else{  /* Selecting AP series */ 
+  else{  /* Selecting GP series */ 
     
     printf("Enter first term and common ratio of GP series\n");
     scanf("%d %d", &first, &ratio);
@@ -48,7 +48,7 @@ int main(){
     /* print the series and add all elements to sum */
     value = first;
     printf("GP Series\n");
-    for(i = 0; i < terms; i++) {
+    for(i = 0; i < terms; i++){
         printf("%d ", value);
         sum += value;
         value = value * ratio;
@@ -60,8 +60,4 @@ int main(){
   return 0;
 }
 
-/* Results 
-
-Cut paste from screen
-
-*/
+/* Results */

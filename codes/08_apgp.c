@@ -1,59 +1,59 @@
 /* Registration: xxxx; Arithmetic Progression (A.P.) and Geometric Progression (G.P.). 
-
-AP series is a sequence of terms in which next term is obtained by adding common difference 
-to previous term. If tn be the nth term of A.P., then (n+1)th term of can be calculated as 
-(n+1)th = tn + D, where D is the common difference (n+1)th - tn. Formula to calculate Nth 
-term tn = a + (n – 1)d, where a is first term of AP and d is the common difference. 
-
-GP series is a sequence of terms in which next term is obtained by multiplying common ratio 
-to previous term. The (n+1)th term of GP can be calculated as (n+1)th = nth x R, where R is 
-the common ratio (n+1)th/nth. Formula to calculate Nth term of GP : tn = a x R^(n-1), where a 
-is first term of GP. 
-
-*/
+AP: tn = a + (n – 1)d and Sn = ( 2a + (n-1)*d ) * (n/2) 
+GP: tn = a * r^(n-1) and Sn = a * (r^n - 1) / (r - 1); */
 
 #include<stdio.h>
+#include<math.h>
+
 int main(){
 
   /* Switch to choose whether ap (=1) or gp (=0) */ 
-  int ap=1;
+  int ap=0;
 
   /* Type declaration */ 
-  int first, diff, ratio, terms, value, i, sum=0;
+  int a, d, r, n, value, i, sum=0;
     
   printf("Enter the number of terms\n");
-  scanf("%d", &terms);
+  scanf("%d", &n);
   
   if(ap){ /* Selecting AP series */ 
 
     printf("Enter first term and common difference of AP series\n");
-    scanf("%d %d", &first, &diff);
+    scanf("%d %d", &a, &d);
  
     /* print the series and add all elements to sum */
-    value = first;
-    printf("AP Series is\n");
-    for(i = 0; i < terms; i++){
+    value = a;
+    printf("AP Series: ");
+    for(i = 0; i < n; i++){
         printf("%d ", value);
         sum += value;
-        value = value + diff;
+        value = value + d;
     }
-    printf("\nSum of the AP series till %d terms is %d\n", terms, sum);
+    printf("\nSum of AP series till %d terms in term-by-term is %d\n", n, sum);
+    
+    /* Compare with direct Calculation */
+    sum = (2*a + (n-1)*d)*n/2;
+    printf("Sum of AP series till %d terms in direct computation is %d\n", n, sum);
 
   }
   else{  /* Selecting GP series */ 
     
     printf("Enter first term and common ratio of GP series\n");
-    scanf("%d %d", &first, &ratio);
+    scanf("%d %d", &a, &r);
  
-    /* print the series and add all elements to sum */
-    value = first;
-    printf("GP Series\n");
-    for(i = 0; i < terms; i++){
+    /* Print the series and add elements term by term */
+    value = a;
+    printf("GP Series: ");
+    for(i = 0; i < n; i++){
         printf("%d ", value);
         sum += value;
-        value = value * ratio;
+        value = value * r;
     }
-    printf("\nSum of the GP series till %d terms is %d\n", terms, sum);
+    printf("\nSum of GP series till %d terms in term-by-term is %d\n", n, sum);
+
+    /* Compare with direct Calculation */
+    sum = a*(pow(r,n)-1)/(r-1);
+    printf("Sum of GP series till %d terms in direct computation is %d\n", n, sum);
 
   }
  

@@ -1,4 +1,4 @@
-/* Registration: xxxx; Code for Matrix Addition */
+/* Registration: xxxx; Code for Matrix A+B, A*B, A^T*B */
 
 #include<stdio.h>
 #include<stdlib.h>

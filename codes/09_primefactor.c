@@ -14,11 +14,11 @@ int main(){
   printf("Prime factors of the number are\n");
 
   /* Do the iteration */
-  for(i=2;i<=sqrt(n);i++){
-     if(n%i==0){
-        printf("%d ",i);    
-        n = n/i;
-        i--; 
+  for(i=2; i<=sqrt(n); i++){
+     if(n%i == 0){
+       printf("%d ",i);    
+       n = n/i;
+       i--; 
      }
   }
   if(n!=1){

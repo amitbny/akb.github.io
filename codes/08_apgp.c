@@ -1,6 +1,6 @@
 /* Registration: xxxx; Arithmetic Progression (A.P.) and Geometric Progression (G.P.). 
-AP: tn = a + (n – 1)d and Sn = ( 2a + (n-1)*d ) * (n/2) 
-GP: tn = a * r^(n-1) and Sn = a * (r^n - 1) / (r - 1); */
+AP: tn = a + (n – 1)*d and Sn = ( 2a + (n-1)*d ) * (n/2) 
+GP: tn = a * r^(n-1) and Sn = a*(r^n - 1) / (r - 1); */
 
 #include<stdio.h>
 #include<math.h>

@@ -1,8 +1,8 @@
 /* Regn.No.:  Root of a quadratic equation ax^2+bx+c=0 */
 
 #include<stdio.h>
-#include<math.h>
 #include<stdlib.h>
+#include<math.h>
 
 int main(){
 
@@ -12,7 +12,7 @@ int main(){
   printf("Enter the values of a, b & c\n");
   scanf("%f %f %f",&a, &b, &c);
 
-  /* If a or b or c is 0, it is not a quadratic equation, so exit */
+  /* If a or b or c is 0, it is not a quadratic equation, so break */
   if(a==0 || b==0 || c==0){
     printf("Error: Roots cannot be determined");
     exit(1);

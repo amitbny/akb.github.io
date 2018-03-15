@@ -20,7 +20,7 @@ int main(){
  
   if(f(x0)*f(x1)>0){
     printf("The interval does not contain the root");
-    exit(0); 
+    exit(1); 
   } 
 
   /* Do the iteration */

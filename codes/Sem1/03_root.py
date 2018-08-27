@@ -1,17 +1,17 @@
 """
-Registration Number: xxxx
+Role Number: xxxx
 Description: Roots of a quadratic equation ax^2+bx+c=0
-@author: AKB
+Author     : AKB
 """
 
 import math, time
 start_time = time.time()
 
 a,b,c = input('Enter the values of a, b & c: ')
-root1=root2=realp=imagp=discr=0.0
+root1 = root2 = realp = imagp = discr = 0.0
   
 # If a or b or c is 0, it is not a quadratic equation, hence exit 
-if a==0 or b==0 or c==0:
+if a==0: 
    print 'Error: Roots cannot be determined'
    exit(1)
 else:
@@ -35,6 +35,8 @@ else:
     
 exec_time = time.time() - start_time
 
-# Results 
-# Try say (1,2,1), (1,4,1), (2,3,4)
+"""
+Results 
+Try say (1,2,1), (1,4,1), (2,3,4)
 print 'Execution time = ', exec_time, ' seconds'
+"""

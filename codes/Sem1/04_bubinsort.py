@@ -8,8 +8,8 @@ import math, time
 start_time = time.time()
 
 # Simple case switch for different problems to choose from 
-bubsort = False
-inssort = True
+bubsort = True
+inssort = False
 
 # Input data from keyboard 
 a = list()
@@ -17,7 +17,7 @@ n = input("Enter the number of inputs :\n")
 print 'Enter the numbers :\n '
 for i in range(int(n)):
     ai = input("ai :")
-    a.append(float(ai))
+    a.append(float(ai))  # you should use int, if asked to sort integers
 print 'Unsorted numbers: ',a
 tmp = 0.0  # auxiliary variable
 
@@ -30,6 +30,7 @@ if(bubsort):
               a[j] = a[j+1];
               a[j+1] = tmp;
               #a[j], a[j+1] = a[j+1], a[j]  # Forbidden in C/Fortran
+              #print i, j, a[:]             # check the sorting
 
 # Perform Insertion sorting operation
 if(inssort):
@@ -41,6 +42,7 @@ if(inssort):
               a[j+1] = a[j]  # Move the bigger item 1 step right to make room for tmp
               j = j - 1      # Take a[j] all the way left to the place where it has a smaller/no value to its left.
        a[j+1] = tmp 
+       print i+1, j+1, a[:]
 
 # Print the results 
 if(bubsort): print 'Bubble sorted numbers in ascending order \n ', a

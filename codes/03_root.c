@@ -1,4 +1,6 @@
-/* Regn.No.:  Root of a quadratic equation ax^2+bx+c=0 */
+/* Regn.No.:xxxx
+   Description: Root of a quadratic equation ax^2+bx+c=0 
+   Author: AKB */
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -29,9 +31,8 @@ int main(){
     else if (discr == 0){
       printf("Roots are real and equal\n");
       root1 = -b/(2.0*a); 
-      root2 = root1;
       printf("Root1 = %f\n",root1);
-      printf("Root2 = %f\n",root2);
+      printf("Root2 = %f\n",root1);
     }
     else if (discr > 0){ 
       printf("Roots are real and distinct\n");

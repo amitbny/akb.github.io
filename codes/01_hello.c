@@ -1,4 +1,6 @@
-/* Regn.No.:  Hello World */
+/* Regn.No.:xxxx;
+   Description: Hello World 
+   Author: AKB */
 
 #include<stdio.h>
 int main(){

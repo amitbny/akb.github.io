@@ -1,4 +1,6 @@
-/* Registration: xxxx; Code for Matrix A+B, A*B, A^T*B */
+/* Registration: xxxx; 
+   Descripton: Code for Matrix A+B, A*B, A^T*B 
+   Author: AKB */
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -8,7 +10,7 @@ int main(){
 
   /* Type declaration */
   int i,j,m,n,p,q,k,A[4][4],B[4][4],C[4][4];
-  int matadd=0,matmul=1;
+  int matadd=0,matmul=1; /* Integer switch to choose from */
   
   /* Enter the matrices A and B from keyboard */
   printf("Enter the number of rows and columns of matrix A\n");

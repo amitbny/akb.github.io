@@ -1,4 +1,6 @@
-/* Registration: xxxx; Code for finding prime factors within a range */
+/* Registration: xxxx; 
+   Description: Code for finding prime factors within a range
+   Author: AKB */
 
 #include<stdio.h>
 #include<math.h>

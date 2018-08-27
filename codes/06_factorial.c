@@ -1,14 +1,14 @@
-/* Regn.No.: ; Sum of factorials and various series solution.
-   Goal is also to optimize the convergence of the series for higher order 
-   terms without manual truncation. */
+/* Regn.No.: xxxx; 
+   Description: Sum of factorials and various series solution.
+   Author: AKB */
 
 #include<stdio.h>
 #include<math.h>
 
 int main(){
 
- /* Simple integer switch for different problems to choose from */
- int fac=0, invfac=0, expx=0, sinx=1;
+ /* Integer case switch for different problems to choose from */
+ int fac=0, invfac=0, expx=0, sinx=0, invnsq=0, invmnsq=0, invnk=1, fibonaci=0;
 
  /* Sum of factorial 1! + 2! + 3! + ... */
  if(fac){ 
@@ -23,11 +23,11 @@ int main(){
       i++;
     } while(i<=n);
  
-    printf("The sum of factorial series of %d order are %d\n", n, sum);
+    printf("The Sum of factorial series upto %d! is %d\n", n, sum);
  }
 
  /* Sum of inverse factorial 1/1! + 1/2! + 1/3!+ ... */
- if(invfac){ 
+ else if(invfac){ 
    
     int n, fact=1, i=1; 
     float sum=0.0;
@@ -40,14 +40,14 @@ int main(){
       i++;
     } while(i<=n);
  
-    printf("The sum of factorial series of %d order are %f\n", n, sum);
+    printf("The sum of inverse factorial series upto %d! is %f\n", n, sum);
  }
 
  /* Exponential series exp(x) = 1+ x/1! + x^2/2! + x^3/3!+ ... */
- if(expx){ 
+ else if(expx){ 
 
-    int   n, fact=1, i=1; 
-    float x, sum=0.0, term;
+    int   fact=1, i=1; 
+    float x,term,sum=0.0;
     printf("Enter value of x for exp(x)\n");
     scanf("%f",&x);
  
@@ -55,6 +55,7 @@ int main(){
       fact *= i;
       term  = (float) pow(x,i)/fact;
       sum  += term;
+      //printf("fact=%d, term=%f, sum=%f\n",fact, term, sum);
       i++;
     } while(fabs(term)>1E-4);
 
@@ -63,9 +64,9 @@ int main(){
  }
 
  /* Sine series sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ... */
- if(sinx){
+ else if(sinx){
    
-    int n=2,p,fact;
+    int n=2,fact;
     float x,term,sum=0.0;
     printf("Enter value of x in degrees for sin(x)\n");
     scanf("%f",&x);
@@ -76,14 +77,87 @@ int main(){
       sum += term;
       fact = n*(n+1);
       term = -term*pow(x,2)/fact;
+      //printf("n=%d, fact=%d, term=%f, sum=%f\n",n, fact, term, sum);
       n   += 2;
     } while(fabs(term)>1E-4);
 
     printf("sin(%g) =  %f & convergence took %d steps\n", 180.0*x/M_PI, sum, n/2);
  }
 
- return 0;
+ /* Sum of inverse n-square 1/1^2 + 1/2^2 + 1/3^2+ ... = pi^2/6 */
+ else if(invnsq){ 
+   
+    int i=1; 
+    float sum=0.0, term, theo=pow(M_PI,2)/6.0;
+ 
+    do{
+      term  = (float) 1/pow(i,2);
+      sum  += term; 
+      //printf("i=%d term=%f sum=%f \n", i, term, sum); 
+      i++;
+    } while(fabs(theo-sum)>3E-4);
+ 
+    printf("1/1^2 + 1/2^2 + 1/3^2 + ... =  %f, pi^2/6 = %f & convergence took %d steps\n", sum, theo, i);
+ }
+ 
+ /* Sum of inverse n-square 1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 ... = pi^2/12 */
+ else if(invmnsq){ 
+    
+    int i=1; 
+    float sum=0.0, term, theo=pow(M_PI,2)/12.0;
+ 
+    do{
+      if (i%2==0) term = (float) -1/pow(i,2);
+      else        term = (float) 1/pow(i,2);
+      sum  += term;
+      //printf("i=%d term=%f sum=%f \n", i, term, sum); 
+      i++;
+    } while(fabs(theo-sum)>1E-4);
+ 
+    printf("1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 + ... =  %f, pi^2/12 = %f & convergence took %d steps\n", sum, theo, i);
+ }
+
+ /* Sum of inverse n^k: 1/2^0 + 1/2^1 + 1/2^2 + 1/2^3 + ...  */
+ else if(invnk){ 
+   
+    int n,k=0; 
+    float term,sum=0.0; 
+    printf("Enter the base of the n^k series\n");
+    scanf("%d",&n);
+    
+    do{
+      term  = (float) 1/pow(n,k);
+      sum  += term;
+      //printf("k=%d term=%f sum=%f \n", k, term, sum); 
+      k++;
+    } while(fabs(term)>1E-4);
+ 
+    printf("Sum from 0 to infinity of (1/%d^k) is %f & convergence took %d steps\n", n, sum, k);
+ }
+
+ /* Sum of inverse Fibonacci series S = Sum 1/Fi, where F(i+1) = F(i) + F(i-1) with F(1) = F(2) = 1 */
+ else if(fibonaci){ 
+   
+    int i=1, Fip, Fi=1, Fim=1; 
+    float sum=0.0, term;
+ 
+    do{
+      if (i>2){ 
+         Fip = Fi + Fim;
+         Fim = Fi;
+         Fi  = Fip;
+      } 
+      term = (float) 1/Fi;
+      sum  += term; 
+      //printf("i=%d Fip=%d Fi=%d Fim=%d sum=%f term=%f \n", i, Fip, Fi, Fim, sum, term);
+      i++;
+    } while(fabs(term)>1E-4);
+ 
+    printf("Sum of reciprocal Fibonacci sequence =  %f, & convergence took %d steps\n", sum, i);
+ }
+
+return 0;
 }
 
-/* Results */
-/* Excercise : Try it for other harmonic functions and hyperbolic functions */
+/* Results 
+ Excercise : Try it for other harmonic functions and hyperbolic functions */

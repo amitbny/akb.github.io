@@ -1,4 +1,6 @@
-/* Regn No: ; Code for Bubble sort */
+/* Regn No:xxxx; 
+   Description: Code for Bubble sort 
+   Author: AKB */
 
 #include<stdio.h>
 #include<math.h>
@@ -36,4 +38,6 @@ int main(){
  return 0;
 }
 
-/* Results */
+/* Results 
+   Try also Insertion Sort and compare the execution time */
+

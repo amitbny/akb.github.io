@@ -1,4 +1,6 @@
-/* Code to compute Mean, Median & Mode */
+/* Regn.No.: xxxx; 
+   Description: Code to compute Mean, Median & Mode 
+   Author: AKB */
 
 #include<stdio.h>
 #include<math.h>
@@ -13,11 +15,14 @@ int main(){
  /* Input the series from keyboard */
  printf("Enter the number of inputs\n");
  scanf("%d",&n);
- 
+
+ /* Initialize to zeros */
+ for(i=1; i<=n; i++) tally[i] = 0; 
+
  printf("Enter the numbers\n");
  for(i=1; i<=n; i++){
      scanf("%d",&a[i]);
-     sum = sum + a[i];
+     sum += a[i];
  }
  
  /* Calculate mean : average of array */ 
@@ -52,7 +57,8 @@ int main(){
        if(a[i]==a[j]) tally[i]++;
     }
  }
-    
+   
+ //for(i=1; i<=n; i++) printf("\n%d %d ", a[i], tally[i]);
  for(i=1; i<=n; i++){
     if(tally[i] > maxCount){
        maxCount = tally[i];

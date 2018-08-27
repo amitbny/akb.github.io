@@ -1,6 +1,8 @@
-/* Registration: xxxx; Arithmetic Progression (A.P.) and Geometric Progression (G.P.). 
-AP: tn = a + (n – 1)*d and Sn = ( 2a + (n-1)*d ) * (n/2) 
-GP: tn = a * r^(n-1) and Sn = a*(r^n - 1) / (r - 1); */
+/* Registration: xxxx; 
+   Description: Arithmetic Progression (A.P.) and Geometric Progression (G.P.). 
+   AP: tn = a + (n – 1)*d and Sn = ( 2a + (n-1)*d ) * (n/2) 
+   GP: tn = a * r^(n-1) and Sn = a*(r^n - 1) / (r - 1); 
+   Author: AKB */
 
 #include<stdio.h>
 #include<math.h>
@@ -8,7 +10,7 @@ GP: tn = a * r^(n-1) and Sn = a*(r^n - 1) / (r - 1); */
 int main(){
 
   /* Switch to choose whether ap (=1) or gp (=0) */ 
-  int ap=0;
+  int ap=1, gp=0;
 
   /* Type declaration */ 
   int a, d, r, n, value, i, sum=0;
@@ -36,7 +38,7 @@ int main(){
     printf("Sum of AP series till %d terms in direct computation is %d\n", n, sum);
 
   }
-  else{  /* Selecting GP series */ 
+  else if(gp){  /* Selecting GP series */ 
     
     printf("Enter first term and common ratio of GP series\n");
     scanf("%d %d", &a, &r);

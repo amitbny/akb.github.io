@@ -38,11 +38,11 @@ if(inssort):
    for i in range(1, int(n)): # you may use len(a) instead of int(n)
        tmp = a[i]
        j = i - 1
-       while (j >= 0) and (a[j] > tmp):
-              a[j+1] = a[j]  # Move the bigger item 1 step right to make room for tmp
-              j = j - 1      # Take a[j] all the way left to the place where it has a smaller/no value to its left.
+       while (j >= 0) and (a[j] < tmp):
+              a[j+1] = a[j]   # Move the bigger item 1 step right to make room for tmp
+              j -= 1          # Take a[j] all the way left to the place where it has a smaller/no value to its left.
        a[j+1] = tmp 
-       print i+1, j+1, a[:]
+       #print i, j, a[:]       # check the sorting
 
 # Print the results 
 if(bubsort): print 'Bubble sorted numbers in ascending order \n ', a

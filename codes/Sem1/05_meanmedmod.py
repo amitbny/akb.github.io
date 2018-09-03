@@ -1,5 +1,5 @@
 """
-Registration Number: xxxx 
+Roll Number: xxxx 
 Description: Compute Mean, Median & Mode
 @author: AKB
 """
@@ -32,7 +32,7 @@ for i in range(int(n)):
 print 'Sorted numbers: ',a
         
 # Calculate median (middle of sorted array)
-if n%2==0:      # remainder
+if n%2==0:      
      median = (a[n/2]+a[n/2+1])/2.0
 elif n%2!=0:
      median = a[(n+1)/2]

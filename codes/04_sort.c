@@ -39,5 +39,6 @@ int main(){
 }
 
 /* Results 
-   Try also Insertion Sort and compare the execution time */
+   Exercise: Do Insertion Sorting and compare the execution time for
+             different sized array */
 

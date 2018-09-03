@@ -9,8 +9,8 @@
 int main(){
 
   /* Type declaration */
-  int i,j,m,n,p,q,k,A[4][4],B[4][4],C[4][4];
-  int matadd=0,matmul=1; /* Integer switch to choose from */
+  int i,j,m,n,p,q,k,trace=0,A[4][4],B[4][4],C[4][4];
+  int matadd=1, matmul=0; /* Integer switch to choose from */
   
   /* Enter the matrices A and B from keyboard */
   printf("Enter the number of rows and columns of matrix A\n");
@@ -32,15 +32,17 @@ int main(){
  
   /* Add the matrices after checking their dimensions */
   if(matadd){
-    if(m==p && n==q){
+    if(m == p && n == q){
       printf("Sum of matrix A and B is\n");
       for (i=1; i<=p; i++){
         for (j=1; j<=q; j++){
            C[i][j] = A[i][j] + B[i][j];
-           printf("%d\t",C[i][j]);
+           printf("%d ",C[i][j]);
         }
         printf("\n");
       }
+      for(k=1; k<=m; k++) trace += C[k][k];  /* Calculate Trace */
+      printf("\nTrace = %d\n", trace);
     }
     else{
       printf("Invalid operation\n");
@@ -50,8 +52,8 @@ int main(){
   
   /* Multiply the matrices */
   /* Number of column of first matrix = Number of row of second matrix */
-  if(matmul){
-    if(n==p){ /* A*B */
+  else if(matmul){
+    if(n == p){ /* A*B */
       printf("\n A*B = \n");
       for(i=1; i<=m; i++){
         for(j=1; j<=q; j++){
@@ -62,9 +64,13 @@ int main(){
           printf("%d ",C[i][j]);
         }
         printf("\n");
-      } 
+      }
+      if (m == q){ /* Calculate Trace for square matrix only */
+         for(k=1; k<=m; k++) trace += C[k][k];  
+         printf("\nTrace = %d\n", trace);
+      }
     }
-    else if(m==p){ /* Transpose(A)*B */
+    else if(m == p){ /* Transpose(A)*B */
       printf("\n Transpose(A)*B = \n");
       for(i=1; i<=n; i++){
         for(j=1; j<=q; j++){
@@ -76,14 +82,20 @@ int main(){
         }
         printf("\n");
       } 
+      if (n == q){ /* Calculate Trace for square matrix only */
+         for(k=1; k<=n; k++) trace += C[k][k];  
+         printf("\nTrace = %d\n", trace);
+      }
     }
     else{
       printf("Invalid operation\n");
       exit(1);
     }
   }
-      
   return 0;
 }
 
-/* Results: */
+/* Results: 
+   Exercise: (a) Check different matrix identities. 
+             (b) Construct inverse of a square 2X2, 3X3 matrix and show D = P*A*P^(-1) */
+

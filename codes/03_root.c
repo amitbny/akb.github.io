@@ -45,4 +45,6 @@ int main(){
   return 0;
 }
 
-/* Results */
+/* Results 
+   Exercise: Check cancellation error and construction of root using root1*root2 = c/a, 
+   when discriminant >>> 0. */

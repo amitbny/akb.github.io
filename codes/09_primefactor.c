@@ -14,7 +14,8 @@ int main(){
   printf("Enter the number: ");
   scanf("%d", &n);
 
-  /* Do the iteration */
+  /* Do the iteration : Every composite number has at least 
+     one prime factor <= square root of itself */
   printf("Prime factors of %d are ",n);
   for(i=2; i<=sqrt(n); i++){
      if(n%i == 0){

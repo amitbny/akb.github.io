@@ -60,7 +60,7 @@ int main(){
     } while(fabs(term)>1E-4);
 
     sum += 1.0; /* Don't forget to add the extra 1 */ 
-    printf("exp(%g) = %f & convergence took %d steps\n", x, sum, i);
+    printf("exp(%g) = %f & convergence took %d steps\n", x, sum, i-1);
  }
 
  /* Sine series sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ... */
@@ -97,7 +97,7 @@ int main(){
       i++;
     } while(fabs(theo-sum)>3E-4);
  
-    printf("1/1^2 + 1/2^2 + 1/3^2 + ... =  %f, pi^2/6 = %f & convergence took %d steps\n", sum, theo, i);
+    printf("1/1^2 + 1/2^2 + 1/3^2 + ... =  %f, pi^2/6 = %f & convergence took %d steps\n", sum, theo, i-1);
  }
  
  /* Sum of inverse n-square 1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 ... = pi^2/12 */
@@ -114,7 +114,7 @@ int main(){
       i++;
     } while(fabs(theo-sum)>1E-4);
  
-    printf("1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 + ... =  %f, pi^2/12 = %f & convergence took %d steps\n", sum, theo, i);
+    printf("1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 + ... =  %f, pi^2/12 = %f & convergence took %d steps\n", sum, theo, i-1);
  }
 
  /* Sum of inverse n^k: 1/2^0 + 1/2^1 + 1/2^2 + 1/2^3 + ...  */
@@ -153,11 +153,11 @@ int main(){
       i++;
     } while(fabs(term)>1E-4);
  
-    printf("Sum of reciprocal Fibonacci sequence =  %f, & convergence took %d steps\n", sum, i);
+    printf("Sum of reciprocal Fibonacci sequence =  %f, & convergence took %d steps\n", sum, i-1);
  }
 
 return 0;
 }
 
 /* Results 
- Excercise : Try it for other harmonic functions and hyperbolic functions */
+   Excercise : Try it for other series of harmonic/hyperbolic functions */

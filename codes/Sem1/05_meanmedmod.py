@@ -1,21 +1,19 @@
 """
 Roll Number: xxxx 
-Description: Compute Mean, Median & Mode
+Description: Compute Mean, Median & Mode of an array
 @author: AKB
 """
 
 import math, time
-start_time = time.time()
+maxCount = 0 
+mean = median = mode = tmp = 0.0
 
-maxCount = mode = 0 
-mean = median = tmp = 0.0
-
-# Input the series from keyboard 
+# Input the array from keyboard 
 a = list()
 n = int(input("Enter the number of inputs :\n"))
 print 'Enter the numbers :\n '
 for i in range(n):
-    ai = input("ai :")
+    ai = input("a"+str(i)+" :")
     a.append(float(ai))
 print 'Unsorted numbers: ',a
 
@@ -23,22 +21,20 @@ print 'Unsorted numbers: ',a
 mean = sum(a)/n
     
 # Perform Bubble sorting
+start_time = time.time()
 for i in range(int(n)):
     for j in range(n-i-1):
         if a[j]>a[j+1]:
-           tmp = a[j];
-           a[j] = a[j+1];
-           a[j+1] = tmp;
+           a[j], a[j+1] = a[j+1], a[j]
 print 'Sorted numbers: ',a
         
 # Calculate median (middle of sorted array)
-if n%2==0:      
-     median = (a[n/2]+a[n/2+1])/2.0
-elif n%2!=0:
-     median = a[(n+1)/2]
+if n%2==0: median = (a[n/2-1]+a[n/2])/2.0
+else:      median = a[(n-1)/2]
  
 # Calculate mode (find tally and Count the maximum)
-tally = [0]*n   # assign zero 
+tally = list([0]*n)   # assign null array 
+
 for i in range(n):
     for j in range (i,n):
         if a[i]==a[j]: tally[i] += 1
@@ -51,7 +47,8 @@ for i in range(n):
 # Results 
 print '\nmean = ', mean
 print '\nmedian = ', median
-print '\nmode = ', mode
+if(maxCount>1): print '\nmode = ', mode
+else:           print '\nThere exists no mode\n'
 
 exec_time = time.time() - start_time
 print 'Execution time = ', exec_time, ' seconds'

@@ -5,23 +5,23 @@ Description: Bubble Sort, Insertion Sort
 """
 
 import math, time
-start_time = time.time()
 
 # Simple case switch for different problems to choose from 
-bubsort = True
-inssort = False
+bubsort = 1
+inssort = 0
 
 # Input data from keyboard 
 a = list()
 n = input("Enter the number of inputs :\n")
 print 'Enter the numbers :\n '
 for i in range(int(n)):
-    ai = input("ai :")
+    ai = input("a"+str(i)+" :")
     a.append(float(ai))  # you should use int, if asked to sort integers
 print 'Unsorted numbers: ',a
 tmp = 0.0  # auxiliary variable
 
 # Perform Bubble sorting operation
+start_time = time.time()
 if(bubsort):
    for i in range(int(n)):
        for j in range(n-i-1):

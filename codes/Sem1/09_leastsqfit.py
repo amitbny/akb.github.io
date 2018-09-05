@@ -6,7 +6,6 @@ Description: Least square fitting
 
 import math, time
 sx = sy = sxy = sxx = m = c = 0.0
-start_time = time.time()
 
 # Input the x & y coordinates
 x = list()
@@ -14,13 +13,14 @@ y = list()
 n = int(input("Enter the number of points :"))
 print 'Enter numbers in array: '
 for i in range(int(n)):
-    xi = float(input("xi :"))
-    yi = float(input("yi :"))
+    xi = float(input("x"+str(i)+" :"))
+    yi = float(input("y"+str(i)+" :"))
     x.append(xi)
     y.append(yi)
 print 'x coordinates: ',x
 print 'y coordinates: ',y
 
+start_time = time.time()
 # Calculate sum of sx,sy,sx*sy,sx*sx
 for i in range(n):
     sx = sx + x[i]
@@ -33,6 +33,12 @@ c = (sy*sxx - sx*sxy)/(float(n)*sxx - sx*sx)
 
 # Print the solution
 print 'Least square fit is f = ', m, '* x + ', c
-# Check for x=[8,2,11,6,5,4,12,9,6,1], y=[3,10,3,6,8,12,1,4,9,14], y=-1.10641891892*x + 14.0810810811; 
 exec_time = time.time() - start_time
 print 'Execution time is = ', exec_time, ' seconds'
+
+"""
+Results
+Check for x=[8,2,11,6,5,4,12,9,6,1], 
+          y=[3,10,3,6,8,12,1,4,9,14], Least square fit f=-1.10641891892*x + 14.0810810811; 
+
+"""

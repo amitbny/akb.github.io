@@ -8,14 +8,7 @@ import math, time
 start_time = time.time()
 
 # Logical case switch for different problems to choose from 
-fac      = True; 
-invfac   = False; 
-expx     = False; 
-sinx     = False; 
-invnsq   = False; 
-invmnsq  = False; 
-invnk    = False; 
-fibonaci = False;
+fac = 1; invfac = 0; expx = 0; sinx = 0; invnsq = 0; invmnsq = 0; invnk = 0; fibonaci = 0;
 
 # Sum of factorial 1! + 2! + 3! + 4! + ...  
 if(fac):

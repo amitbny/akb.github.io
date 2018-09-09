@@ -1,14 +1,13 @@
 """
-Registration Number: xxxx 
-Description: Bubble Sort, Insertion Sort
+Roll Number: xxxx 
+Description: Comparison of Bubble and Insertion Sort
 @author: AKB
 """
 
 import math, time
 
-# Simple case switch for different problems to choose from 
-bubsort = 1
-inssort = 0
+# Case switch for different sorting algorithm to choice
+bubsort = 1; inssort = 0
 
 # Input data from keyboard 
 a = list()
@@ -29,8 +28,8 @@ if(bubsort):
               tmp = a[j];
               a[j] = a[j+1];
               a[j+1] = tmp;
-              #a[j], a[j+1] = a[j+1], a[j]  # Forbidden in C/Fortran
-              #print i, j, a[:]             # check the sorting
+              #a[j], a[j+1] = a[j+1], a[j]  # Alternative Treatment; Forbidden in C/Fortran
+              #print i, j, a[:]             # DEBUGGING
 
 # Perform Insertion sorting operation
 if(inssort):
@@ -42,10 +41,15 @@ if(inssort):
               a[j+1] = a[j]   # Move the bigger item 1 step right to make room for tmp
               j -= 1          # Take a[j] all the way left to the place where it has a smaller/no value to its left.
        a[j+1] = tmp 
-       #print i, j, a[:]       # check the sorting
+       #print i, j, a[:]       # DEBUGGING
 
 # Print the results 
 if(bubsort): print 'Bubble sorted numbers in ascending order \n ', a
 if(inssort): print 'Insertion sorted numbers in ascending order \n ', a
 exec_time = time.time() - start_time
 print 'Execution time = ', exec_time, ' seconds'
+
+"""
+Results
+
+"""

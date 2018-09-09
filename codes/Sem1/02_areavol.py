@@ -8,10 +8,7 @@ import math, time
 start_time = time.time()
 
 # Logical case switch for different problems to choose from 
-area_cir = False
-area_tri = True
-vol_sph  = False
-vol_cyl  = False
+area_cir = 1; area_tri = 0; vol_sph  = 0; vol_cyl  = 0
 
 # Area of a Circle 
 if(area_cir):

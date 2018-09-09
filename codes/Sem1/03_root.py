@@ -1,5 +1,5 @@
 """
-Role Number: xxxx
+Roll Number: xxxx
 Description: Roots of a quadratic equation ax^2+bx+c=0
 Author     : AKB
 """

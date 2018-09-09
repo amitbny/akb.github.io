@@ -1,5 +1,5 @@
 """
-Registration Number:
+Roll Number:
 Description: Code for Matrix A+B, A*B, A^T*B. 
 @author: AKB
 """
@@ -10,47 +10,40 @@ import math, time
 matadd=0; matmul=1;
 
 #==== Zero initialize and populate A =====#
-m = int(input('number of rows of A, m = '))
-n = int(input('number of columns of A, n = '))
+m, n = input("number of rows and columns of A: ")
 
-A = list();   # Create an empty list 
-# initialize 0 as number of rows and then multiply with number 
-# of columns to initialize matrix
-for i in range(0,m):
+# Either initialize 0 as number of rows and then multiply with number of columns,
+A = list()   
+for i in range(m):
     A   += [0]
     A[i] = [0]*n
 
+# Alternatively,
+#A = [[0 for j in range(n)] for i in range(m)]
+
 # Enter the matrices A from keyboard
 print 'Enter matrix A'
-for i in range (0,m):
-    for j in range (0,n):
+for i in range (m):
+    for j in range (n):
         A[i][j] = int(input("A"+str(i)+str(j)+" :"))
-print 'A=', A
+print 'A_{'+str(m)+'x'+str(n)+'} = ', A
 
 #==== Zero initialize and populate B =====#
-p = int(input('number of rows of B, p = '))
-q = int(input('number of columns of B, q = '))
-
-B = list();   
-for i in range(0,p):
-    B   += [0]
-    B[i] = [0]*q
+p, q = input("number of rows and columns of B: ")
+B = [[0 for j in range(q)] for i in range(p)]
 
 # Enter the matrix B from keyboard
 print 'Enter matrix B'
 for i in range (0,p):
     for j in range (0,q):
         B[i][j] = int(input("B"+str(i)+str(j)+" :"))
-print 'B=',B
+print 'B_{'+str(p)+'x'+str(q)+'} = ', B
 
-start_time = time.time()
 # Add the matrices after checking their dimensions 
+start_time = time.time()
 if(matadd):
     if m==p & n==q:
-       C = list()   # Construct C_{mn} with zeroes
-       for i in range(0,m):
-           C   += [0]
-           C[i] = [0]*n
+       C = [[0 for j in range(n)] for i in range(m)] # Construct C_{mn} with zeroes
        for i in range(m):
            for j in range (n):
                C[i][j] = A[i][j] + B[i][j]
@@ -61,32 +54,25 @@ if(matadd):
 
 # Multiply the matrices after checking their dimensions 
 elif(matmul):
-# Number of column of first matrix = Number of row of second matrix 
+    # Number of column of first matrix = Number of row of second matrix 
     if n==p:    # A*B
-       C = list()   # Construct C_{mq} with zeroes
-       for i in range(0,m):
-           C   += [0]
-           C[i] = [0]*q
-       print 'A * B = \n'
+       C = [[0 for j in range(q)] for i in range(m)] # Construct C_{mq} with zeroes
        for i in range(m):
            for j in range(q):
                C[i][j] = 0;
                for k in range(n):
                    C[i][j] += A[i][k]*B[k][j]
-       print(C)
+       print 'A * B = ', C
     
     elif m==p:  # Transpose(A)*B
-         C = list()   # Construct C_{nq} with zeroes
-         for i in range(0,n):
-             C   += [0]
-             C[i] = [0]*q
+         C = [[0 for j in range(q)] for i in range(n)] # Construct C_{nq} with zeroes
          print '\n A^T * B = \n'
          for i in range(n):
              for j in range(q):
                  C[i][j] = 0
                  for k in range(m):
                      C[i][j] += A[k][i]*B[k][j];
-         print(C)
+         print 'A^T * B = ', C
       
     else:
       printf("Invalid operation\n");
@@ -98,3 +84,10 @@ else:
 
 exec_time = time.time() - start_time
 print 'Execution time is = ', exec_time, ' seconds'
+
+"""
+Results: 
+CAUTION: A = [[0*n]*m] DOES NOT WORK AS YOU UPDATE ELEMENTS, THE CODE BREAKS.
+Exercise: Try doing inverse of 2X2 and 3X3 matrix. Try constucting the Similarity transformation.
+
+"""

@@ -4,17 +4,15 @@ Registration Number: xxxx
 Description: Arithmetic Progression (A.P.), Geometric Progression (G.P.)
 AP: tn = a + (n – 1) * d and Sn = ( 2a + (n-1) * d ) * (n/2) 
 GP: tn = a * r^(n-1) and Sn = a * (r^n - 1) / (r - 1)
-@author: AKB
+Author: AKB
 """
 
 import math, time
 start_time = time.time()
 
-# Simple case switch for different problems to choose from 
-ap = False
-gp = True
-
-value = summ = 0 # free garbage values 
+# Case switch for different problems to choose from 
+ap = 1; gp = 0
+value = sumf = 0 # free garbage values 
 
 # Input data from keyboard 
 a = list()
@@ -30,14 +28,14 @@ if(ap):
     print ("AP Series: ")
     for i in range(n): 
         print (value)
-        summ += value
+        sumf  += value
         value += d
     
-    print 'Sum of AP series till ', n, ' terms in term-by-term is ', summ
+    print 'Sum of AP series till ', n, ' terms in term-by-term is ', sumf
     
     # Compare with direct Calculation
-    summ = (2*a + (n-1)*d)*n/2;
-    print 'Sum of AP series till ', n, ' terms in direct computation is ', summ
+    sumf = (2*a + (n-1)*d)*n/2;
+    print 'Sum of AP series till ', n, ' terms in direct computation is ', sumf
 
 # Selecting GP series 
 else:  
@@ -49,14 +47,14 @@ else:
     print ("GP Series: ")
     for i in range(n): 
         print (value)
-        summ += value
+        sumf  += value
         value *= r
     
-    print 'Sum of GP series till ', n, ' terms in term-by-term is ', summ
+    print 'Sum of GP series till ', n, ' terms in term-by-term is ', sumf
 
     # Compare with direct Calculation
-    summ = a*(math.pow(r,n)-1)/(r-1);
-    print 'Sum of GP series till ', n, ' terms in direct computation is ', summ
+    sumf = a*(math.pow(r,n)-1)/(r-1);
+    print 'Sum of GP series till ', n, ' terms in direct computation is ', sumf
 
 # Results
 exec_time = time.time() - start_time

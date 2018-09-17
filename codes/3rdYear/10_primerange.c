@@ -1,10 +1,10 @@
 /* Registration Number: xxxx; 
    Description: Code for finding prime numbers within a range. 
-                Note that 26 primes are there within [1,1e2],
-                         169 primes are there within [1,1e3],
-                        1230 primes are there within [1,1e4], 
-                        9593 primes are there within [1,1e5], 
-                       78499 primes are there within [1,1e6] and so on 
+                Note that 25 primes are there within [0,1e2],
+                         168 primes are there within [1,1e3],
+                        1229 primes are there within [1,1e4], 
+                        9592 primes are there within [1,1e5], 
+                       78498 primes are there within [1,1e6] and so on 
    Author: AKB */
 
 #include<stdio.h>
@@ -29,7 +29,7 @@ int main(){
           break;
         }
      }
-     if(flag==0){
+     if(i>1 && flag==0){
         printf("%d ",i);
         count++;           /* Count how many primes are there */
         prime[count] = i;  /* Store prime numbers in an array */

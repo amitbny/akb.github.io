@@ -90,4 +90,10 @@ Results:
 CAUTION: A = [[0*n]*m] DOES NOT WORK AS YOU UPDATE ELEMENTS, THE CODE BREAKS.
 Exercise: Try doing inverse of 2X2 and 3X3 matrix. Try constucting the Similarity transformation.
 
+3D matrix: 
+import random;
+A = [[[0 for k in range(3)] for j in range(3)] for i in range(3)]
+A = [[[random.randint(1,10) for k in range(5)] for j in range(4)] for i in range(3)]
+check A[0][0][0], A[1][2][0] etc
+
 """

@@ -9,7 +9,7 @@ root1 = root2 = realp = imagp = discr = 0.0
 a,b,c = input('Enter the values of a, b & c: ')
 start_time = time.time()
 
-# If a or b or c is 0, it is not a quadratic equation, hence exit 
+# If a is 0, it is not a quadratic equation, hence exit 
 if a==0: 
    print 'Error: Roots cannot be determined'
    exit(1)

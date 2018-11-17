@@ -70,9 +70,14 @@ GNUPLOT
 =======
 f(x) = b*x + a
 fit f(x) 'input.dat' u 1:2 via b,a
-plot 'input.dat' u 1:2 title 'Bare data' with points, f(x) title 'straight line fit'
+plot 'input.dat' u 1:2 title 'Experimental data' with points, f(x) title 'Straight line fit'
 set xlabel "x"
 set ylabel "y=f(x)"
+set tics font "Helvetica,16"
+set output 'figure.eps'
+set terminal postscript color
+replot
+quit
 
 OCTAVE
 =======
@@ -86,4 +91,5 @@ yresidue = y - yprime; % residuals
 Sresidue = sum(yresidue.^2); 
 Stotal   = (length(y)-1)*var(y,1);
 Rsq = 1 - Sresidue/Stotal
+
 """

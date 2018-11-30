@@ -1,5 +1,5 @@
 /* Registration: xxxx; 
-   Description: Code for linear Least Square Fitting 
+   Description: Code for fitting exponential using Least Square Fitting 
    Author: AKB */
 
 #include<stdio.h>
@@ -9,7 +9,7 @@ int main(){
 
   /* Type declaration */
   int n,i,j;
-  float m,c,x[20],y[20],sx=0,sy=0,sxy=0,sxx=0;
+  float a,b,x[20],y[20],sx=0,sy=0,sxy=0,sxx=0;
   
   /* Input the initial guess limits */
   printf("Enter the number of inputs: ");
@@ -20,40 +20,40 @@ int main(){
   /* Do the iteration */
   for(i=1;i<=n;i++){
      sx += x[i]; 
-     sy += y[i];  
-     sxy += x[i]*y[i];  
+     sy += log(y[i]);  
+     sxy += x[i]*log(y[i]);  
      sxx += x[i]*x[i];  
   } 
-  m = (n*sxy-sx*sy)/(n*sxx-sx*sx);
-  c = (sxx*sy-sx*sxy)/(n*sxx-sx*sx);
+  a = (sxx*sy-sx*sxy)/(n*sxx-sx*sx);
+  b = (n*sxy-sx*sy)/(n*sxx-sx*sx);
  
   /* Print the solution */
-  printf("Equation is y = %f*x + %f\n", m, c);
+  printf("Equation is y = %f*x^%f\n", exp(a), b);
   return 0;
 }
 
 /* Results: 
 Enter the number of inputs: 10
 Enter the coordinates x[i] and y[i]:
-1 -0.94
-2 -0.82
-3 -0.72
-4 -0.58
-5 -0.49
-6 -0.32
-7 -0.21
-8 -0.08
-9  0.06
-10 0.20
+0.25 3.1
+0.5  1.7
+0.75 1.0
+1.0  0.68
+1.25 0.42
+1.5  0.26
+1.75 0.14
+2.0  0.09
+2.25 0.04
+2.5  0.03
 
-Equation is y = 0.126667*x + -1.086667 
+Equation is y = 5.144139*x.^-2.066639
 
 OCTAVE VISUALIZATION
 ====================
 data = load('input.dat');
 x = data(:,1); y = data(:,2);
-yy = 0.126667*x + -1.086667 
-plot(x, y, 'bo'); hold on; plot(x, yy, 'r-'); hold off; xlabel('x'); ylabel('y=f(x)');
+yy = 5.144139*x^(-2.066639);
+clf; plot(x, y, 'bo'); hold on; plot(x, yy, 'r-'); hold off; xlabel('x'); ylabel('y=f(x)');
 p = polyfit(x, y, 1)   % straight line i 1 is polynomial of degree 1
 yprime = p(1)*x + p(2) % this can also be obtained as, yprime = polyval(p,x);
 yresidue = y - yprime; % residuals

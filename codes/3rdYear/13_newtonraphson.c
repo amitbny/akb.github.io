@@ -6,11 +6,15 @@
 #include<math.h>
 
 float f(float x){
-    return pow(x,2)-25;
+    //return pow(x,2)-25;
+    //return pow(x,2)*log(x)-5.72;
+    return pow(x,2)-2*exp(-x);
 }
 
 float df(float x){
-    return 2*x;
+    //return 2*x;
+    //return x*(log(pow(x,2))+1);
+    return 2*(x + exp(-x));
 }
 
 int main(){

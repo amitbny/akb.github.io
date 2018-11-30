@@ -8,6 +8,11 @@
 
 float f(float x){
     return pow(x,2)-4;
+    //return pow(x,3)-5.816*pow(x,2)+9.632*x-7.632;  /*    0 < x < 5;   Root = 3.815994 */ 
+    //return 20-2.5*x-0.01*pow(x,3);                 /*    0 < x < 10;  Root = 6.762772 */ 
+    //return pow(x+5,2) + 10*x - 11;                 /* -1.5 < x < 0;   Root = -0.726471 */ 
+    //return pow(cos(x),2)-5.6*pow(x,2)+x+20;        /*    1 < x < 2.5; Root = 1.989044 */ 
+    //return 3*sin(x)-3.5-5*cos(x);                  /*    3 < x < 4;   Root = 3.528137 */ 
 }
 
 int main(){

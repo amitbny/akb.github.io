@@ -33,4 +33,15 @@ int main(){
   return 0;
 }
 
-/* Results */
+/* Results :
+Enter the number of terms in the table: 6
+Enter the values of the variables x and y: 
+0.1 0.545
+0.2 0.331
+0.3 0.275
+0.4 0.258
+0.5 0.240
+0.6 0.235
+Enter the value of x: 0.25
+Corresponding value of the variable y is: 0.292832
+*/

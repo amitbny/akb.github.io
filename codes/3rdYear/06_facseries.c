@@ -8,10 +8,11 @@
 int main(){
 
  /* Integer case switch for different problems to choose from */
- int fac=0, invfac=0, expx=0, sinx=0, invnsq=0, invmnsq=0, invnk=1, fibonaci=0;
+ int series1=1, series2=0, series3=0, series4=0; 
+ int series5=0, series6=0, series7=0, series8=0, series9=0;
 
  /* Sum of factorial 1! + 2! + 3! + ... */
- if(fac){ 
+ if(series1){ 
    
     int n,fact=1,sum=0,i=1; 
     printf("Enter the limit of the factorial series\n");
@@ -27,7 +28,7 @@ int main(){
  }
 
  /* Sum of inverse factorial 1/1! + 1/2! + 1/3!+ ... */
- else if(invfac){ 
+ else if(series2){ 
    
     int n, fact=1, i=1; 
     float sum=0.0;
@@ -44,7 +45,7 @@ int main(){
  }
 
  /* Exponential series exp(x) = 1+ x/1! + x^2/2! + x^3/3!+ ... */
- else if(expx){ 
+ else if(series3){ 
 
     int   fact=1, i=1; 
     float x,term,sum=0.0;
@@ -64,7 +65,7 @@ int main(){
  }
 
  /* Sine series sin(x) = x - x^3/3! + x^5/5! - x^7/7! + ... */
- else if(sinx){
+ else if(series4){
    
     int n=2,fact;
     float x,term,sum=0.0;
@@ -84,8 +85,26 @@ int main(){
     printf("sin(%g) =  %f & convergence took %d steps\n", 180.0*x/M_PI, sum, n/2);
  }
 
+ /* Sum of series 1 - 1/3^3 + 1/5^3 - 1/7^3 + ... = pi^3/32 */
+ else if(series5){
+
+    int i=1, c=0; 
+    float sum=0.0, term, theo=pow(M_PI,3)/32.0;
+ 
+    do{
+      term = (float) pow(-1,c)/pow(i,3);
+      sum  += term;
+      //printf("i=%d term=%f sum=%f c=%d\n", i, term, theo-sum, c); 
+      i    += 2; 
+      c++;
+    } while(fabs(theo-sum)>=1E-5);
+    
+    printf("1/1^3 - 1/2^2 + 1/3^2 - 1/4^2 + ... =  %f, pi^2/12 = %f & convergence took %d steps\n", sum, theo, i/2);
+ 
+ }
+
  /* Sum of inverse n-square 1/1^2 + 1/2^2 + 1/3^2+ ... = pi^2/6 */
- else if(invnsq){ 
+ else if(series6){ 
    
     int i=1; 
     float sum=0.0, term, theo=pow(M_PI,2)/6.0;
@@ -101,7 +120,7 @@ int main(){
  }
  
  /* Sum of inverse n-square 1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 ... = pi^2/12 */
- else if(invmnsq){ 
+ else if(series7){ 
     
     int i=1; 
     float sum=0.0, term, theo=pow(M_PI,2)/12.0;
@@ -118,7 +137,7 @@ int main(){
  }
 
  /* Sum of inverse n^k: 1/2^0 + 1/2^1 + 1/2^2 + 1/2^3 + ...  */
- else if(invnk){ 
+ else if(series8){ 
    
     int n,k=0; 
     float term,sum=0.0; 
@@ -136,7 +155,7 @@ int main(){
  }
 
  /* Sum of inverse Fibonacci series S = Sum 1/Fi, where F(i+1) = F(i) + F(i-1) with F(1) = F(2) = 1 */
- else if(fibonaci){ 
+ else if(series9){ 
    
     int i=1, Fip, Fi=1, Fim=1; 
     float sum=0.0, term;

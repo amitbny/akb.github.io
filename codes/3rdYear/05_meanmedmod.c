@@ -69,8 +69,10 @@ int main(){
  /* Print the results */ 
  printf("\nmean = %f\n", mean);
  printf("median = %f\n", median);
- printf("mode   = %d\n", mode);
- return 0;
+ if (maxCount==1) printf("There is no mode\n");
+ else             printf("mode   = %d\n", mode);
+ 
+return 0;
 }
 
 /* Results */

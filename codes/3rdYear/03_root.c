@@ -15,7 +15,7 @@ int main(){
   scanf("%f %f %f",&a, &b, &c);
 
   /* If a or b or c is 0, it is not a quadratic equation, so break */
-  if(a==0 || b==0 || c==0){
+  if(a==0){
     printf("Error: Roots cannot be determined");
     exit(1);
   }
@@ -34,7 +34,7 @@ int main(){
       printf("Root1 = %f\n",root1);
       printf("Root2 = %f\n",root1);
     }
-    else if (discr > 0){ 
+    else{ 
       printf("Roots are real and distinct\n");
       root1 = (-b + sqrt(discr))/(2.0*a); 
       root2 = (-b - sqrt(discr))/(2.0*a); 

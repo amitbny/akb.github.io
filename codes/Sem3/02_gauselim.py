@@ -13,6 +13,8 @@ print 'Enter the coefficients: '
 a = np.array([[float(input("a"+str(i)+str(j)+" : ")) for j in range(n)] for i in range(n)])
 b = np.array([float(input("b"+str(i)+" : ")) for i in range(n)])
 
+print 'Determinant calculated in direct method ', np.linalg.det(a)
+
 # Print Solution that uses Gaussian Elimination in one line
 start_time = time.time()
 print 'Using direct Solver : ', np.linalg.solve(a,b)
@@ -28,6 +30,12 @@ for k in range (n-1):        # pivot equation/row k=[0,1,2]
            a[i,k+1:n] -= factor*a[k,k+1:n]
            b[i]       -= factor*b[k]
 
+# Determinant after Elimination Stage = a11*a22*...*ann
+det = 1
+for k in range(n):
+    det *= a[k,k]
+print 'Determinant of a is ', det
+
 # Back Substitution
 for k in range(n-1,-1,-1):
     b[k] = (b[k] - np.dot(a[k,k+1:n],b[k+1:n]))/a[k,k]  
@@ -37,13 +45,7 @@ print 'The values of x are ', b
 exec_time = time.time() - start_time
 print 'Execution time = ', exec_time, ' seconds'
 
-# Determinant after Elimination Stage = a11*a22*...*ann
-det = 1
-for k in range(n):
-    det *= a[k,k]
 
-print 'Determinant of a is ', det
-print 'Determinant calculated in direct method ', np.linalg.det(a)
 
 
 # Results: 

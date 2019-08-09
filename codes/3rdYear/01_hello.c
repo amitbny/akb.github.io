@@ -1,4 +1,4 @@
-/* Regn.No.:xxxx;
+/* Regn.No.:xxxx-xx-xxxx;
    Description: Hello World 
    Author: AKB */
 
@@ -9,4 +9,6 @@ int main(){
  return 0;
 }
 
-/* Results */
+/* Results 
+   Hello World
+*/

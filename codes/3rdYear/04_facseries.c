@@ -9,7 +9,7 @@ int main(){
 
  /* Integer case switch for different problems to choose from */
  int series1=0, series2=0, series3=0, series4=0; 
- int series5=0, series6=0, series7=0, series8=0, series9=1;
+ int series5=0, series6=0, series7=1, series8=0, series9=0;
  float tol=1E-4;    /* Tolerance */
 
  /* Sum of factorial 1! + 2! + 3! + ... */
@@ -123,8 +123,7 @@ int main(){
     float sum=0.0, term, theo=pow(M_PI,2)/12.0;
  
     do{
-      if (i%2==0) term = (float) -1/pow(i,2);
-      else        term = (float) 1/pow(i,2);
+      term = (float) pow(-1,i+1)/pow(i,2);
       sum  += term;
       i++;
     } while(fabs(theo-sum)>tol);
@@ -190,7 +189,7 @@ return 0;
    1/1^2 + 1/2^2 + 1/3^2 + 1/4^2 + ... =  1.644634, pi^2/6 = 1.644934 & convergence took 3331 steps
  
    1/1^2 - 1/2^2 + 1/3^2 - 1/4^2 + ... =  0.822565, pi^2/12 = 0.822467 & convergence took 71 steps
-   
+
    Enter the base of the n^k series : 2
    Sum from 0 to infinity of (1/2^k) is 1.999939 & convergence took 15 steps
       

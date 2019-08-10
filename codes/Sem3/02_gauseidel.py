@@ -5,88 +5,34 @@ Author: AKB
 """
 
 import numpy as np
-error = 1      # Initialize with a random error 
+error = 1.0    # Initialize with a random error 
 tol   = 1E-6   # Tolerance
-
-# Choose List Based, Numpy Based & LU Based approach
-usenp=0; uselu=0; uselist=1; 
 
 # Input 4 equations: 9a+b+c+d=75, a+8b+c+d=54, a+b+7c+d=43, a+b+c+6d=34
 n = input("Enter the number of equations: ")
-
-if(usenp):
-
-   print 'Enter the coefficients in Numpy Array : '
-   a = np.array([[int(input("a"+str(i)+str(j)+" : ")) for j in range(n+1)] for i in range(n)])
+print 'Enter the coefficients in Numpy Array : '
+a = np.array([[int(input("a"+str(i)+str(j)+" : ")) for j in range(n+1)] for i in range(n)])
+a.astype(float)
    
-   # Initialize solution vector to zero
-   x = np.array([0 for  i in range(n)])
+# Initialize solution vector to zero
+x = np.array([0.0 for  i in range(n)])
    
-   # Do the iteratioin
-   count = 0
-   while error > tol:
-      for i in range (n):
-          summ = 0;
-          for j in range (n):
-              if j!=i:
-                 summ += a[i,j]*x[j];
-          temp = (a[i,n] - summ)/a[i,i]  # Note the last index n
-          error = abs(x[i] - temp)
-          count += 1
-          if error > tol:
-             x[i] = temp   
-   
-   # Print the solution 
-   print 'The values of x are ', x, 'and it took ', count, 'steps to converge'
-
-elif(uselu):
-
-   print 'Enter the coefficients in Numpy Array : '
-   a = np.array([[int(input("a"+str(i)+str(j)+" : ")) for j in range(n+1)] for i in range(n)])
-   
-   # Initialize solution vector to zero
-   x = np.array([0 for  i in range(n)])
-  
-   # Take a matrix and then compute Lower Triangular Matrix
-   l = np.tril(a[:,:len(a)])
- 
-   # Do the iteration
-   count = 0
-   while error > tol:
-       xn = np.dot(np.linalg.inv(l), a[:,len(a)]-np.dot(a[:,:len(a)]-l,x))   
-       error = sum(abs(x - xn))
-       x = xn   
+# Do the iteration
+count = 0
+while error > tol:
+   for i in range (n):
+       summ = 0.0
+       for j in range (n):
+           if i!=j:
+              summ += a[i,j]*x[j];
+       temp = (a[i,n] - summ)/a[i,i]  # Note the last index n
+       error = abs(x[i] - temp)
        count += 1
+       if error > tol:
+          x[i] = temp
    
-   # Print the solution 
-   print 'The values of x are ', x, 'and it took ', count, 'steps to converge'
-
-elif(uselist):
-
-   print 'Enter the coefficients in List Array : '
-   a = list() 
-   a = [[int(input("a"+str(i)+str(j)+" : ")) for j in range(n+1)] for i in range(n)]
-
-   # Initialize solution vector to zero
-   x = list()
-   x = [0 for i in range(n)]
-
-   # Do the iteration
-   count = 0
-   while error > tol:
-      for i in range (n):
-          summ = 0;
-          for j in range (n):
-              if j!=i:
-                 summ += a[i][j]*x[j];
-          temp = (a[i][n] - summ)/a[i][i]  # Note the last index n
-          error = abs(x[i] - temp)
-          count += 1
-          if error > tol:
-             x[i] = temp   
-   
-   # Print the solution 
-   print 'The values of x are ', x, 'and it took ', count, 'steps to converge'
+# Print the solution 
+print 'The values of x are ', np.around(x), 'and it took ', count, 'steps to converge'
    
 # Results: 
 # Enter the number of equations: 4

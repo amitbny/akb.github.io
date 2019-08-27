@@ -48,7 +48,6 @@ print 'Integral_',a,'^',b,' sqrt(1-x^2)*cos(x) dx = ', I1
 # Using Numpy/Scipy
 x = np.linspace(a, b, 128)
 print 'Integral_',a,'^',b,' sqrt(1-x^2)*cos(x) dx = ', sci.simps(f(x),x)
-print 'Integral_',a,'^',b,' sqrt(1-x^2)*cos(x) dx = ',  np.simps(f(x),x)
 
 """
 Results: 

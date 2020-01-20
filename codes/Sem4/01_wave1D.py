@@ -1,6 +1,6 @@
 """
 Registration : xxxx
-Description  : Wave propagation to boundary for middle-plucked string. 
+Description  : Wave propagation to boundary for middle-plucked string (Hyperbolic PDE). 
 Author       : AKB
 """
 
@@ -30,10 +30,13 @@ colour=iter(cm.rainbow(np.linspace(0,10,tn)))
 for i in range(0,tn,10):
     c = next(colour)
     plt.plot(x, u[:,i], c=c)
-plt.xlabel('Distance (in cm)')
-plt.ylabel('U(x,t)')
-plt.grid()
-plt.title('CFL='+str(cfl)+', tf='+str(tf)+', L='+str(L))
+plt.xlabel('Distance (in cm)', size=16)
+plt.xticks(size = 14)
+plt.ylabel('U(x,t)', size=16)
+plt.yticks(size = 14)
+plt.title('CFL='+str(cfl)+', tf='+str(tf)+', L='+str(L), size=16)
 plt.xlim([0, L])
 plt.ylim([-0.05, 1.05])
+plt.grid()
+plt.savefig('plot/01_wave1D.pdf')
 plt.show()

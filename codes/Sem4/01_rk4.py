@@ -1,22 +1,23 @@
 """
 Registration: xxxx; 
-Description: Integration of ODE by RK4's Method dy/dt = g(x,y)
+Description: RK4's Method dy/dx = f(x,y) with IVP (x0,y0), xn and h.
 Author: AKB
 """
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Choose first solve=1 to generate files and then plot=1 to plot them all
-solve=0; plot=1;
+solve = 0;
+plot  = 1;
 
 if(solve):
 
    def f(x,y): return (1+x)*y + 1 - 3*x + pow(x,2)   
 
-   # Enter the integration limits  
-   # Take x0=0, y0=0.065 and h=[5e-2,5e-3,5e-4,5e-5]
-   x, y, h = input('Enter initial value x0, y0 and timestep h : ')
-   time = 3; step = int(time/h)
+   # Enter initial conditions 
+   #x, y, xn, h = input('Enter initial value of x0, y0, xn and timestep h : ')
+   x = 0.0; y = 0.065; xn = 3.0; h = 0.05; 
+   step = int(xn/h)
    X = Y = []
 
    # Open a file (in C, fp is file pointer)
@@ -39,6 +40,7 @@ if(solve):
 
    # Close the file
    fp.close()
+   print 'Final value at x = ',x,' is y = ', y
 
 if(plot):
 
@@ -50,18 +52,18 @@ if(plot):
 
    # Plot the data
    plt.figure(1)
-   plt.plot(X1, Y1, '-', lw=2, c='g', label=r'$h=5\times 10^{-2}$')
-   plt.plot(X2, Y2, '-', lw=2, c='b', label=r'$h=5\times 10^{-3}$')
-   plt.plot(X3, Y3, '-', lw=2, c='k', label=r'$h=5\times 10^{-4}$')
-   plt.plot(X4, Y4, '-', lw=2, c='r', label=r'$h=5\times 10^{-5}$')
+   plt.plot(X1, Y1, '->', lw=2, c='g', label=r'$h=5\times 10^{-2}$')
+   plt.plot(X2, Y2, '-x', lw=2, c='b', label=r'$h=5\times 10^{-3}$')
+   plt.plot(X3, Y3, '-.', lw=2, c='k', label=r'$h=5\times 10^{-4}$')
+   plt.plot(X4, Y4, '-+', lw=2, c='r', label=r'$h=5\times 10^{-5}$')
    plt.legend(loc='best', prop={'size':16})
    plt.suptitle(r'RK4 Method : $\frac{dy}{dx} = (1+x)y+1-3x+x^2$',size=16)
-   plt.xlabel('x', size = 14)
+   plt.xlabel('x', size = 16)
    plt.xticks(size = 14)
-   plt.ylabel('y', size = 14)
+   plt.ylabel('y', size = 16)
    plt.yticks(size = 14)
    plt.grid()
-   plt.savefig('plot/09_rk4.pdf') 
+   plt.savefig('plot/01_rk4.pdf') 
    plt.show()
 
 """

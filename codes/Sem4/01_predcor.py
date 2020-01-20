@@ -1,22 +1,23 @@
 """
 Registration: xxxx; 
-Description: Modified Euler/Predictor-Corrector/Heun's Method 
+Description: Modified-Euler/Predictor-Corrector/Heun's Method
+             dy/dx = f(x,y) with IVP (x0,y0), xn and h.
 Author: AKB
 """
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Choose first solve=1 to generate files and then plot=1 to plot them all
-solve=0; plot=1;
+solve = 0;
+plot  = 1;
 
 if(solve):
 
-   def f(x,y): return y-2*x**2+1  # result y(1)=2.183872
-   #def f(x,y): return (1+x)*y + 1 - 3*x + pow(x,2) 
+   def f(x,y): return (1+x)*y + 1 - 3*x + pow(x,2) 
 
-   # Enter initial conditions x0=0.0, y0=0.065, xn=1.0, h=0.05
-   x, y, h = input('Enter initial value of x0, y0, xn and timestep h : ')
-   #x = 0.0; y = 0.5; xn = 1.0; h = 0.5; 
+   # Enter initial conditions 
+   #x, y, xn, h = input('Enter initial value of x0, y0, xn and timestep h : ')
+   x = 0.0; y = 0.065; xn = 3.0; h = 0.00005; 
    step = int(xn/h)
    tol = 1e-8;  # Tolerance
    X = Y = []
@@ -62,16 +63,16 @@ if(plot):
 
    # Plot the data
    plt.figure(1)
-   plt.plot(X1, Y1, '->', lw=2, c='g', label=r'$h=5\times 10^{-2}$')
-   plt.plot(X2, Y2, '-x', lw=2, c='b', label=r'$h=5\times 10^{-3}$')
+   plt.plot(X1, Y1, '->', lw=1, c='g', label=r'$h=5\times 10^{-2}$')
+   plt.plot(X2, Y2, '-x', lw=.5, c='b', label=r'$h=5\times 10^{-3}$')
    plt.plot(X3, Y3, '-.', lw=1, c='k', label=r'$h=5\times 10^{-4}$')
-   plt.plot(X4, Y4, '-+', lw=1, c='r', label=r'$h=5\times 10^{-5}$')
-   plt.legend(loc='best', prop={'size':16})
+   plt.plot(X4, Y4, '-+', lw=.5, c='r', label=r'$h=5\times 10^{-5}$')
+   plt.legend(loc='best', prop={'size':18})
    plt.suptitle(r'Heuns Method : $\frac{dy}{dx} = (1+x)y+1-3x+x^2$',size=18)
-   plt.xlabel('x', size = 14)
+   plt.xlabel('x', size = 16)
    plt.xticks(size = 14)
-   plt.ylabel('y', size = 14)
+   plt.ylabel('y', size = 16)
    plt.yticks(size = 14)
    plt.grid()
-   #plt.savefig('plot/01_eulerPC.pdf') 
+   plt.savefig('plot/01_eulerPC.pdf') 
    plt.show()

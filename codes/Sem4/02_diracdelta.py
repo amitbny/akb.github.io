@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import gaussian
 
 # Logical case switch for different problems to choose from 
-prob1=1; prob2=1; prob3=1; prob4=0
+prob1=0; prob2=0; prob3=0; prob4=1;
 
 # ===== Improper integral for ddelta ===== #
 if(prob1):
@@ -82,20 +82,20 @@ if(prob3):
 if(prob4):
    from sympy import *
    def f(x) :
-       return x**2
+       #return x**2
        #return exp(-x**2+x+1)
-       #return sin(x)
+       return sin(x)
 
    # Enter integration limits x1, x2 and common additive a
    #x1, x2, a = input('Enter integration limits x1, x2 and common additive a : ')
-   x1 = -1.0; x2 = 1.5; a = 5;
+   x1 = 1.0; x2 = 1.5; a = 5.0;
 
    # Use symbolic computation to perform the definite integral
    x = Symbol('x')
-   I = integrate(f(x)*DiracDelta(x-a), (x, x1-a, x2+a))
+   I = integrate(f(x)*DiracDelta(x-a), (x, a-x1, a+x2))
 
    # Print result to get value by evalf
-   print 'Integral_',x1-a,'^',x2+a,' x^2 ddelta(x-',a,')dx = ', I.evalf()
+   print 'Integral_(',a,'-',x1,')^(',a,'+',x2,') x^2 ddelta(x-',a,')dx = ', I.evalf()
 
 """
 ########### Results (prob1):
@@ -127,6 +127,12 @@ Theoretical value of the Integral =  13.0967609371
 Absolute error =  2.7105554618e-10 , Relative error =  0.0
 
 ########### Results (prob4):
-Integral_ -6.0 ^ 6.5  x^2 ddelta(x- 5 )dx =  25
+Integral_( 5.0 - 1.0 )^( 5.0 + 1.5 ) x^2 ddelta(x- 5.0 )dx =  25.0000000000000
+Integral_( -5.0 - 1.0 )^( -5.0 + 1.5 ) x^2 ddelta(x- -5.0 )dx =  25.0000000000000
 
+Integral_( 5.0 - 1.0 )^( 5.0 + 1.5 ) x^2 ddelta(x- 5.0 )dx =  5.60279643753727e-9
+Integral_( -5.0 - 1.0 )^( -5.0 + 1.5 ) x^2 ddelta(x- -5.0 )dx =  2.54366564737692e-13
+
+Integral_( 5.0 - 1.0 )^( 5.0 + 1.5 ) x^2 ddelta(x- 5.0 )dx =  -0.958924274663138
+Integral_( -5.0 - 1.0 )^( -5.0 + 1.5 ) x^2 ddelta(x- -5.0 )dx =  0.958924274663138
 """

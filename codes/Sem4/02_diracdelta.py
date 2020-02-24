@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import gaussian
 
 # Logical case switch for different problems to choose from 
-prob1=0; prob2=0; prob3=0; prob4=1;
+prob1=0; prob2=0; prob3=1; prob4=0;
 
 # ===== Improper integral for ddelta ===== #
 if(prob1):
@@ -56,8 +56,10 @@ if(prob3):
    x = np.linspace(-2, 2, 500)
    dx = x[1] - x[0]
    convolution = np.convolve(gauss(x,mu1,sig1), gauss(x,mu2,sig2), mode="same")*dx
-   sigc = np.sqrt(sig1**2 * sig2**2/(sig1**2 + sig2**2))
-   ampc = sigc/(np.sqrt(2*np.pi)*sig1*sig2)
+   #sigc = np.sqrt(sig1**2 * sig2**2/(sig1**2 + sig2**2)) # product std
+   #ampc = sigc/(np.sqrt(2*np.pi)*sig1*sig2)              # product amplitude   
+   sigc = np.sqrt(sig1**2 + sig2**2)               # convolution std
+   ampc = 1.0/np.sqrt(2*np.pi*(sig1**2 + sig2**2)) # convolution amplitude
 
    # Plot
    plt.figure()

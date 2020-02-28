@@ -10,24 +10,27 @@ import matplotlib.pyplot as plt
 from scipy.signal import gaussian
 
 # Logical case switch for different problems to choose from 
-prob1=0; prob2=0; prob3=1; prob4=0;
+prob1=1; prob2=0; prob3=0; prob4=0; prob5=0;
 
 # ===== Improper integral for ddelta ===== #
 if(prob1):
-   def f(x,sig):
-       return np.exp(-(x-2)**2/(2.0*sig**2))*(x+3)/np.sqrt(2.0*np.pi*sig**2) #[-np.inf,np.inf]
+   def f(x,mu,sig):
+       return np.exp(-(x-mu)**2/(2.0*sig**2))*(x+3)/np.sqrt(2.0*np.pi*sig**2) #[-np.inf,np.inf]
 
    # Enter standard deviation and integration limits
-   #sig, low, up = input('Enter sigma & integration limits : ')
-   sig = 1.0; low = -np.inf; up = np.inf;
+   #mu, sig, low, up = input('Enter sigma & integration limits : ')
+   mu = 2.0; sig = .0002; low = -np.inf; up = np.inf;
+
+   # Eradicating the Crossover problem by narrowing the bracket
+   low = mu - 10*sig; up = mu + 10*sig;
 
    # Peform the infinite interval integral using Quadrature
-   I, err = sci.quad(f,low,up,args=(sig))
+   I, err = sci.quad(f,low,up,args=(mu,sig))
 
    # Print result
    print 'Integral computed value = ', I, ' with error = ', err
 
-#====== Gaussian Integral ======#
+# ====== Gaussian Integral ====== #
 if(prob2):
    def f(x,a,b,c): return np.exp(-a*x**2 + b*x + c) #[-np.inf,np.inf]
 
@@ -44,7 +47,7 @@ if(prob2):
    print 'Theoretical value of the Integral = ', I_theo
    print 'Absolute error = ', err, ', Relative error = ', I_num - I_theo
 
-#====== Convolution of two Gaussian =========#
+# ====== Convolution of two Gaussian ====== #
 if(prob3):
    
    def gauss(x,mu,sig):
@@ -80,7 +83,7 @@ if(prob3):
    #plt.savefig('plot/02_convol.pdf')
    plt.show()
 
-# ===== Int_(x1-a)^(x2+a) f(x) ddelta(x-a) dx = f(a) ===== #
+# ====== Int_(x1-a)^(x2+a) f(x) ddelta(x-a) dx = f(a) ====== #
 if(prob4):
    from sympy import *
    def f(x) :
@@ -97,6 +100,29 @@ if(prob4):
    I = integrate(f(x)*DiracDelta(x-a), (x, a-x1, a+x2))
 
    # Print result to get value by evalf
+   print 'Integral_(',a,'-',x1,')^(',a,'+',x2,') x^2 ddelta(x-',a,')dx = ', I.evalf()
+
+# ===== Improper integral for ddelta ===== #
+if(prob5):
+   from sympy import *
+   import numpy as np
+   
+   def f(x) :
+       return x**2
+      
+   def ddelta(x,a):
+       eps = 1.0;
+       #return exp(-abs(x-a)/eps)/(2.0*eps)
+       return exp(-(x-a)**2/(4.0*eps))/(sqrt(4.0*pi*eps))
+
+   # Enter integration limits x1, x2 and common additive a
+   #x1, x2, a = input('Enter integration limits x1, x2 and common additive a : ')
+   x1 = 1.0; x2 = 1.5; a = 5.0;
+
+   # Use symbolic computation to perform the definite integral
+   x = Symbol('x')
+   I = integrate(f(x)*ddelta(x,a), (x, a-x1, a+x2))
+
    print 'Integral_(',a,'-',x1,')^(',a,'+',x2,') x^2 ddelta(x-',a,')dx = ', I.evalf()
 
 """
@@ -116,11 +142,11 @@ Integral computed value =  5.0  with error =  2.63478332566e-08
 e) Enter sigma & integration limits : 0.025, -np.inf, np.inf
 Integral computed value =  5.0  with error =  1.11929395302e-08  #### CROSSOVER ####
 
-f) Enter sigma & integration limits : 0.023, -np.inf, np.inf
-Integral computed value =  4.80637342436e-09  with error =  8.697850889e-09
- 
-g) Enter sigma & integration limits : 0.01,-np.inf,np.inf
+f) Enter sigma & integration limits : 0.01,-np.inf,np.inf
 Integral computed value =  7.57910251848e-51 with error =  1.37155184913e-50
+
+g) After redefining the limit [mu-10*sig, mu+10*sig] to compute delta
+Integral computed value =  5.0  with error =  4.3355779296e-09
 
 ########### Results (prob2):
 Enter a,b,c coefficients & integration limits : 1,2,1,-np.inf,np.inf

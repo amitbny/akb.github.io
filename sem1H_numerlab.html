@@ -67,15 +67,19 @@
       
          <font color="#2C3539"> <h3> Study Materials </h3> </font>
 <UL>
-    <LI> Introduction to Numerical Analysis, S.S. Sastry, 5th Edn., 2012, PHI Learning Pvt. Ltd.
-    <LI> Learning with Python-how to think like a computer scientist, J. Elkner, C. Meyer, and A. Downey, 2015, Dreamtech Press.
-    <LI> Introduction to computation and programming using Python, J. Guttag, 2013, Prentice Hall India.
-    <LI> Effective Computation in Physics- Field guide to research with Python, A. Scopatz and K.D. Huff, 2015, O'Rielly A 
-         first course in Numerical Methods, U.M. Ascher & C. Greif, 2012, PHI Learning.
-    <LI> Elementary Numerical Analysis, K.E. Atkinson, 3 rd Edn., 2007, Wiley India Edition.
-    <LI> Numerical Methods for Scientists & Engineers, R.W. Hamming, 1973, Courier Dover Pub.
-    <LI> An Introduction to computational Physics, T.Pang, 2nd Edn., 2006,Cambridge Univ. Press Computational Physics, 
-         Darren Walker, 1st Edn., 2015, Scientific International Pvt. Ltd.
+    <LI> Gnuplot in Action understanding data and Graphs - Phillipp K. Janert.
+    <LI> Scientific Computing in Python - Abhijit Kar Gupta.
+    <LI> Physics in Laboratory including python Programming (Semester I) - Mandal, Chowdhury, Das, Das.  
+    <LI> Introduction to Numerical Analysis - S.S. Sastry. 
+    <LI> Numerical Methods - Arun Kr Jalan & Utpal Sarkar.   
+    <LI> Numerical Mathematical Analysis - J. B. Scarborough. 
+    <LI> Elementary Numerical Analysis - K.E. Atkinson.
+    <LI> An Introduction to computational Physics - T.Pang.
+    <LI> Learning with Python-how to think like a computer scientist - J. Elkner, C. Meyer, and A. Downey.
+    <LI> Gnuplot 5 - Lee Phillips. 
+    <LI> Python Programming - Satyanarayana, Radhika Mani, Jagdesh. 
+    <LI> Python 2.1 Bible - Dave Brueck, Stephen Tanner.
+    <LI> Computatioal Physics problem solving with Computers - Landau, Paez, Bordeianu.
 </UL>
    </P> 
     </div>
@@ -84,28 +88,71 @@
 <body text="#717D7D" link="#99C68E" vlink="#C8B560" bgcolor="#FFFFFF">
 <P>
   <UL>
-    <LI> <font color="#DB7093"><b>Introduction and Overview</b></font>: Computer architecture and organization, memory and Input/output devices.
-    <LI> <font color="#DB7093"><b>Basics of scientific computing</b></font>: Binary and decimal arithmetic, Floating point numbers, algorithms,
-         Sequence, Selection and Repetition, single and double precision arithmetic, underflow & overflow - emphasize 
-         the importance of making equations in terms of dimensionless variables, Iterative methods. 
-    <LI> <font color="#DB7093"><b>Introduction to programming in python</b></font>: Introduction to programming, constants, variables and data 
-         types, dynamical typing, operators and expressions, modules, I/O statements, file handling, iterables, 
-         compound statements, indentation in python, the if-elif-else block, for and while loops, nested compound
-         statements. 
-    <LI> <font color="#DB7093"><b>Programs</b></font>: 
-    <UL>
-    <LI> Elementary calculations with different type of data e.g., area and volume of regular shapes using formulae. 
-         Creation and handling one dimensional array. Sum and average of a list of numbers stored in array, finding 
-         the largest and lowest number from a list, swapping two data in a list, sorting of numbers in an array using 
-         bubble sort, insertion sort method. Calculation of term value in a series and finding the other terms with 
-         a seed (value of particular term) and calculation of different quantities with series. Convergence and 
-         accuracy of series. Introduction of three dimensional array. Simple calculations of matrices e.g., addition, 
-         subtraction, multiplication.
-    <LI> <font color="#DB7093"><b>Curve fitting, Least square fit, Goodness of fit, standard deviation</b></font>. (i) Ohms law to calculate R, (ii) Hooke's 
-         law to calculate spring constant.
-    </UL>
-       
-   
+    <LI> <font color="#CD5C5C"><b>Introduction to programming in python</b></font>: 
+       <UL>
+       <LI> <font color="#900C3F"><b> Introduction</b></font>: 
+            <UL>
+            <LI> Using the python interpreter as a calculator.
+            <LI> Variable and data types (int, float, complex, list, tuple, string, the type() function).
+            <LI> Basic mathematical operations. 
+            <LI> Compound statements in python: 
+                 <UL>
+                 <LI> Conditionals: if: elif: else:
+                 <LI> Loops for:, while:
+                 <LI> User defined functions def: [return statement, default values for arguments, keyword arguments]
+                 </UL>  
+            <LI> Importing modules with math and cmath as examples.
+            <LI> Using online help. 
+            <LI> Basic idea of namespaces-local and global. 
+            <LI> Python scripts, I/O operations (including opening and writing to files). 
+            </UL>
+       <LI> <font color="#900C3F"><b> The python iterables data type</b></font>: 
+            <UL>
+            <LI> <b>List</b>: 
+                 <UL>
+                 <LI> Defining lists,reading and changing elements from lists, slicing (with discussion on the 
+                      difference between <b>ll=mm</b> and <b>ll=mm[:]</b>, concatenation, list comprehension.
+                 <LI> built in functions involving lists: range(), len(), sum(), min(), max().
+                 <LI> list methods: append(), extend(), count(), index(), sort(), insert(), pop(), remove(), reverse().
+                 </UL>  
+            <LI> <b>Tuples</b>: Contrast and compare with lists, packing/unpacking using tuples (including a,b=b,a to 
+                                swap variables). 
+            <LI> <b>Strings</b>: defining strings, the use of single, double or triple quotes as string delimiters, 
+                                 len(), indexing, slicing, string concatanation, some string methods: strip(), split(), 
+                                 join(), find(), count(), replace(), string formatting in python (using the % operator). 
+            </UL>
+       <LI> <font color="#900C3F"><b> Problems and applications</b></font>: 
+            <UL>
+            <LI> <font color="#008080"><b> Problem 0</b></font>: Observe and interpret the result of the following two scripts
+                 <UL>
+                 <LI> i=0; a=1; while a>0: i=i+1; a=a/2; print i;
+                 <LI> i=0; a=1; b=1; while a+b>b: i=i+1; a=a/2; print i;  
+                 </UL>  
+            <LI> <font color="#008080"><b> Problem 1</b></font>: Root finding for a single variable (basic theory and algorithm).
+                 <UL>
+                 <LI> Bisection method.
+                 <LI> Newton-Raphson Method.  
+                 </UL>  
+            <LI> <font color="#008080"><b> Problem 2</b></font>: Sorting of lists (algorithm, flowchart and code).
+                 <UL>
+                 <LI> Bubble sort.
+                 <LI> Selection sort.  
+                 </UL>  
+            <LI> <font color="#008080"><b> Problem 3</b></font>: ODE in one and two dimensions using Euler algorithm 
+                 (output to be saved in data files and gunuplot to be used to plot graphs).
+                 <UL>
+                 <LI> Capacitor charging/discharging.
+                 <LI> Simulating a half-wave rectifier with a capacitor filter.
+                 <LI> Particle dynamics in 1D.  
+                 </UL>
+            <LI> <font color="#008080"><b> Problem 4</b></font>: Matrix operations using list of lists.
+                 <UL>
+                 <LI> Matrix Addition.
+                 <LI> Matrix Multiplication.
+                 <LI> Transpose of a Matrix.  
+                 </UL>
+            </UL>
+       </UL>  
    </UL>
   </P>
    <font color="#2C3539"> <h3> Remarks </h3> </font>

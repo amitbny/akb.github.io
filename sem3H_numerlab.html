@@ -106,47 +106,101 @@
     <font color="#2C3539"> <h3> Topics </h3> </font>
 <body text="#717D7D" link="#99C68E" vlink="#C8B560" bgcolor="#FFFFFF">
 <P>
-  <UL>
-    <LI> <font color="#CD5C5C"><b> Introduction to Numerical computation using numpy and scipy</b></font>: 
+    <OL type="I">
+    <LI> <font color="#CD5C5C"><b> Introduction to numpy and scipy</b></font>: 
          <UL>
-         <LI> Introduction to the python numpy module. Arrays in numpy, array operations, array item selection, 
-              slicing, shaping arrays. Basic linear algebra using the linalg submodule. 
-         <LI> Introduction to graph plotting using matplotlib. 
-         <LI> Introduction to the scipy module. Uses in optimization and solution of differential equations.
+         <LI> <font color="#008080"><b> The numpy array</b></font>:  
+              <UL>
+              <LI> properties: size, shape, ndim, dtype. 
+              <LI> creating arrays:
+                   <UL>
+                   <LI> zeros, one(), full(), fill().
+                   <LI> arange(),linspace(),logspace(). 
+                   <LI> identity(), eye().
+                   <LI> astype().  
+                   </UL>  
+              <LI> Indexing and slicing arrays (view versus copy).
+              <LI> Important array methods:
+                   <UL>
+                   <LI> reshape(), ravel(), flatten().
+                   <LI> hstack() and vstack().  
+                   </UL>
+              <LI> Element wise functions:native numpy functions,the vectorise() method.
+              <LI> Aggregate functions np.sum(),np.prod(),np.mean(),np.std(),np.var(),np.min(),np.max(), np.argmin(), np.argmax().  
+              </UL>  
+         <LI> <font color="#008080"><b> Using numpy for matrix operators (the 2D numpy array)</b></font>:
+              <UL>
+              <LI> addition, multiplication(dot).
+              <LI> Gauss elemination (using partial pivoting)(numpy code):
+                   <UL>
+                   <LI> for evaluating the determinant.
+                   <LI> for solving linear equation.  
+                   </UL>  
+              <LI> The numpy linalg module:
+                   <UL>
+                   <LI> solving equations: (a) mesh equations of electric circuits (3 meshes), (b) coupled spring mass systems (3 masses).  
+                   <LI> diagonalisation.  
+                   </UL>
+              </UL>  
+         <LI> <font color="#008080"><b> Scientific Applications</b></font>:
+              <UL>
+              <LI> <b>Interpolation</b>: Using both numpy and scipy.interpolate(for visualization of the results use 
+                   matplotlib) -basic numerical analysis theory to be explained.
+                   <UL>
+                   <LI> Lagrange Interpolation.
+                   <LI> Newton Forward Interpolation.  
+                   </UL>  
+              <LI> <b>Numerical Integration:(for both functions and equi-spaced data)</b>:
+                   <UL>
+                   <LI> Trapezoidal rule.
+                   <LI> Simpson’s one-third rule. Using both numpy and scipy.integrate.quad(), scipy.integrate.trapz(), 
+                        scipy.intgrate.simps() - basic numerical analysis theory to be explained.
+                   <LI> Numerical Integration by n-point Gaussian Quadrature method. [Basic theory and numpy code - nodes 
+                        and weights to be read from files, Integration by scipy.integrate.quad().]    
+                   </UL>
+              <LI> <b>Solution of ODE</b>:
+                   <UL>
+                   <LI> Solution of 1st order and 2nd order ordinary differential equation using 4th order Runge Kutta
+                        (RK4) algorithm [algorithm and numpy code - detailed theory not required]   
+                   </UL>       
+              <LI> <b>Curve fitting</b>:
+                   <UL>
+                   <LI> With numpy polynomials.  
+                   <LI> With user defined functions using scipy.optimize module.  
+                   </UL>         
+              </UL>                      
          </UL>
-    <LI> <font color="#CD5C5C"><b> Solution of Linear system of equations</b></font> by Gauss elimination method and Gauss Seidel method.
-    <LI> <font color="#CD5C5C"><b> Matrix</b></font> : Diagonalization of matrices, Inverse of a matrix, Eigen vectors, eigen values problems.
+    <LI> <font color="#CD5C5C"><b> Introduction to matplotlib (Using the pyplot submodule)</b></font>: 
          <UL>
-         <LI> Solution of mesh equations of electric circuits (3 meshes)
-         <LI> Solution of coupled spring mass systems (3 masses)
-         </UL>
-    <LI> <font color="#CD5C5C"><b> Special functions</b></font> using User defined functions.
-         <UL>
-         <LI> Generating and plotting Legendre Polynomials Generating and plotting Bessel function (Make use of 
-              generating function and recursion formula).
-         </UL>
-    <LI> <font color="#CD5C5C"><b> Root finding</b></font>: Bisection and Newton-Raphson method.
-    <LI> <font color="#CD5C5C"><b> Interpolation</b></font> by Lagranges method.
-    <LI> <font color="#CD5C5C"><b> Numerical differentiation</b></font> : forward and backward difference formulae.
-    <LI> <font color="#CD5C5C"><b> Numerical integration</b></font> : Trapezoidal and Simpsons rule.
-    <LI> <font color="#CD5C5C"><b> Solution of ODE</b></font> : First order Differential equation - Euler's method.
-    <LI> <font color="#CD5C5C"><b> Basic 3D graph plotting</b></font> : plotting functions and data files, parametric plots, Surface and contour plots.
-   </UL>
+         <LI> figure, axes, subplot.
+         <LI> plot(), scatter(), show().
+         <LI> labels, legends, titles, styles, ticks.
+         <LI> dynamically updating curves.
+         <LI> saving graphs.  
+         </UL>     
+    </OL>
   </P>
    <font color="#2C3539"> <h3> Remarks </h3> </font>
-   <UL>
+     <OL type="i">
      <LI> <a style="text-decoration: none" href="studymat/Sem3/CC5_CUQ.pdf"> Question Set for a few years.</a>  
      <LI> Use Pydriod from Android PlayStore to practice codes on your cellphone.</a>  
-   </UL>
+     </OL>
      </P>
-     <font color="#2C3539"> <h3> Study Materials </h3> </font>
-    <UL>
+   <font color="#2C3539"> <h3> Study Materials </h3> </font>
+    <OL type="1">
+    <LI> Numerical Methods - Arun Kr Jalan & Utpal Sarkar.  
+    <LI> Scientific Computing in Python - Abhijit Kar Gupta.
+    <LI> Physics in Laboratory including python Programming (Semester III) - Mandal, Chowdhuri, Das, Das. 
+    <LI> Matplotlib Plotting Cookbook - Alexandre Devert.  
+    <LI> Programming for Computation-Python - Svein Linge & Hans Petter Lantangen.  
+    <LI> Numerical Python - Robert Johansson.  
+    <LI> Introduction to Numerical Analysis - S.S. Sastry.  
+    <LI> Elementary Numerical Analysis - K.E. Atkinson.  
+    <LI> An Introduction to computational Physics - T.Pang. 
+    <LI> Computatioal Physics problem solving with Computers - Landau, Paez, Bordeianu.  
     <LI> Numpy beginners guide - Idris Alba.
     <LI> Computational Physics - D.Walker.
-    <LI> Simulation of ODE/PDE Models with MATLAB, OCTAVE and SCILAB: Scientific and Engineering Applications: 
-         A.V. Wouwer, P. Saucez, C.V. Fernandez.
-   </UL>
-   </P> 
+    </OL>
     
 </div></div>
 <style type="text/css">

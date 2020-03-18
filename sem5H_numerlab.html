@@ -84,35 +84,19 @@
          <LI> the <i>s-wave</i> radial equation for a particle moving in a central potential, <font color="#CD5C5C"> 
               d<sup>2</sup>U(r)&frasl;dr<sup>2</sup> = A(r)U(r)</font> where <font color="#CD5C5C"> A(r) = 2m&frasl;&hbar;<sup>2</sup>[V(r)-E]</font>.
               Some examples. 
-         <LI> <font color="#CD5C5C"> &int;<sub>-&infin;</sub><sup>&infin;</sup> exp[-(ax<sup>2</sup>+bx+c)]dx = &radic;<span style="text-decoration: overline"><sup>&pi;</sup>&frasl;<sup>a</sup></span>exp(<sup>b<sup>2</sup></sup>&frasl;<sub>4a</sub>+c)</font>.
-         <LI> Verifying that the convolution of two Gaussian function is a Gaussian.
-           <LI> Verifying that <font color="#CD5C5C"> &int;<sub>a-x1</sub><sup>a+x2</sup> &delta;(x-a)f(x)dx = f(a)</font> using different limiting representation of &delta;(x).  
-         </UL>
-    <LI> <font color="#CD5C5C"> <b>Fourier Series</b></font>:
-         <UL> Evaluate the Fourier coefficients of a given periodic function using scipy.integrate.quad(). Examples: square
-wave, triangular wave, saw-tooth wave. Plot to see a wave form from scipy.signal and the constructed series along
-with.
-         </UL>
-    <LI> <font color="#CD5C5C"> <b>Special Functions</b></font>: 
-         <UL>
-         <LI> Use of special functions taken from scipy.special. Plotting and verification of the properties of special functions.
-Orthogonality relations and recursion relations. Examples,
-           <UL>
-           <LI> <font color="#CD5C5C">&#8747;<sub>-&infin;</sub><sup>&infin;</sup> P<sub>n</sub>(&#956;)P<sub>m</sub>(&#956;)d&#956; = &delta;<sub>nm</sub> <sup>2</sup>&frasl;<sub>2n+1</sub>.</font>
-           <LI> <font color="#CD5C5C">(1-x<sup>2</sup>)P<sub>n</sub>&prime;(x)+(n+1)xP<sub>n</sub>(x)=(n+1)P<sub>n+1</sub>(x).</font>
-           <LI> <font color="#CD5C5C">z<sup>2</sup>J<sub>&nu;</sub>&prime;(z)+&nu;J<sub>&nu;</sub>(z)=zJ<sub>&nu;-1</sub>(z).</font>
-           </UL>
-         </UL>
-    <LI> <font color="#CD5C5C"> <b>Complex analysis</b></font>: 
-         <UL>
-           <LI> Integrate <font color="#CD5C5C">&#8747;<sub>0</sub><sup>&#8734;</sup> sinx/x dx</font> numerically and check with computer integration.
-         <LI> Root finding:
               <UL>
-              <LI> Compute the <font color="#CD5C5C">n<sup>th</sup></font> roots of unity for n=2,3,and 4.
-              <LI> Find the two square roots of <font color="#CD5C5C">−5 + 12i</font>.
-              </UL>    
+              <LI> <font color="#CD5C5C"> V(r) = - e<sup>2</sup>&frasl;r</font>.
+              <LI> <font color="#CD5C5C"> V(r) = - e<sup>2</sup>&frasl;r e<sup>-r/a</sup> </font>.
+              <LI> <font color="#CD5C5C"> V(r) = 1/2 k r<sup>2</sup> + 1/3 b r<sup>3</sup> </font>.
+              <LI> <font color="#CD5C5C"> V(r) = D(e<sup>-2&alpha;r'</sup> - e<sup>-&alpha;r'</sup></font>, where r'=r-r<sub>0</sub>&frasl;r.
+              </UL>
+    <LI> <font color="#CD5C5C"> <b>Time Evaluation of Wave Packet</b></font>:
+         <UL> 
+         <LI> Time evolution of a wave packet moving in free space by the numerical solution of the time dependent Scrödinger 
+              equation.
+         <LI> Solving the TDSE to study Barrier penetration and tunneling for an initially Gaussian wavepacket.  
          </UL>
-   </UL>
+    </UL>
   </P>
    <font color="#2C3539"> <h3> Remarks </h3> </font>
    <UL>
@@ -121,16 +105,13 @@ Orthogonality relations and recursion relations. Examples,
      </P>
      <font color="#2C3539"> <h3> Study Materials </h3> </font>
     <UL>
-    <LI> Numerical Analysis, Mathematics of Scientific Computing - David Kincaid, Ward Cheney.
-    <LI> Numerical Methods for Engineers - D.V. Griffiths and I.M. Smith.
     <LI> An Introduction to computational Physics - T.Pang.
-    <LI> Scientific Computing in python - Avijit Kar Gupta.
+    <LI> Scientific Computing in Python - Abhijit Kar Gupta.
     <LI> Computational Physics problem solving with Computers - Landau, Paez, Bordeianu.
-    <LI> Computational Methods for Physics - Joel Franklin.
-    <LI> Programming for Computation-Python - Svein Linge & Hans Petter Lantangen.
-    <LI> Numerical Python - Robert Johansson.
-   </UL>
-   </P> 
+    <LI>  Computational Methods for physcs - Joel Franklin.
+    <LI> Computational Quantum Mechanics - Joshua Izaac, Jingbo Wang.
+    </UL>
+  
     
 </div></div>
 <style type="text/css">

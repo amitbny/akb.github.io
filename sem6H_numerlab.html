@@ -1,5 +1,8 @@
 <html>
 <head>
+<style>
+ol.a {list-style-type: lower-greek;}  
+</style>    
 <CENTER> <font size="5" face="Palatino" color="#241C02"> <i>Statistical Mechanics (Practical)</i></font>  
 </CENTER>
 <body text="#717D7D" link="#339966" vlink="#339966" bgcolor="#FFFFFF">
@@ -46,18 +49,20 @@
 <P>
     <UL>
       <LI> <a style="text-decoration: none" href="https://www.javatpoint.com/numpy-random"> Lecture 01</a>. [Random Number & Histogram] 
-      <LI> <a style="text-decoration: none" href="https://www.real-statistics.com/time-series-analysis/stochastic-processes/autocorrelation-function/"> Lecture 02</a>. [Time Series & Autocorrelation]  
+      <LI> <a style="text-decoration: none" href="https://www.real-statistics.com/time-series-analysis/stochastic-processes/autocorrelation-function/"> Lecture 02</a>. [ACF]  
       <LI> <a style="text-decoration: none" href="studymat/Sem6/Lindner_stochastic.pdf"> Lecture 03</a>. [Exp and Normal Distro. from Uniform]
       <LI> <a style="text-decoration: none" href="http://kfe.fjfi.cvut.cz/~limpouch/numet/random/Monte-karlen.pdf"> Lecture 04</a>. [Nuclear Decay]  
-      <LI> Lecture 05. [Monte Carlo Method] 
+      <LI> <a style="text-decoration: none" href="studymat/Sem6/MC_Beu.pdf">Lecture 05. [Monte Carlo Integration] 
     </UL>
     
-    <font color="#2C3539"> <h3> Codes </h3> </font>
+    <font color="#2C3539"> <h3> Codes (Excercise) </h3> </font>
     <UL>
-    <LI> Code 01: <a style="text-decoration: none" href="codes/Sem6/01_hist.py"> Histogram.</a>  
-    <LI> Code 02: <a style="text-decoration: none" href="codes/Sem6/01_autocorr.py"> Auto Correlation Function.</a>
-    <LI> Code 03: <a style="text-decoration: none" href="codes/Sem6/01_uniexp.py"> Uniform to Exponential Distro.</a>  
-    <LI> Code 04: <a style="text-decoration: none" href="codes/Sem6/01_uninorm.py"> Uniform to Normal Distro.</a>  
+    <LI> Code 01: Write histogram code for various PDFs, compute moment/cumulant & compare with theory. 
+    <LI> Code 02: Compute Auto Correlation Function (ACF) for various time-series.
+    <LI> Code 03: Convert Uniform distributed RV to Exponential Distributed RV.  
+    <LI> Code 04: Convert Uniform distributed RV to Uniform Distributed RV using Box-Muller Transform.
+    <LI> Code 05: Single & Two-stage [M.L.Boas Math.Phy.,ODE(Sec-3,Example-2)] Nuclear Decay using Monte Carlo methods. 
+    <LI> Code 06: Area of &#x3C0;, single & double integrals using MC Methods.   
     </UL>
     </P>   
      
@@ -66,7 +71,14 @@
     <LI> Plot 02: <a style="text-decoration: none" href="codes/Sem6/plot/01_hist.pdf">Histogram.</a>  
     <LI> Plot 02: <a style="text-decoration: none" href="codes/Sem6/plot/01_autocorr.pdf">Auto Correlation Function.</a>
     </UL>
-    </P>       
+    </P>  
+      
+   <font color="#2C3539"> <h3> Remarks </h3> </font>
+   <UL>
+   <LI> <a style="text-decoration: none" href="https://accendoreliability.com/sturges-rule-method-selecting-number-bins-histogram/"> Sturge's 
+          Rule</a> of selecting Bins for a given sample size.
+   </UL> 
+  
          
     </div>
     <div id="right_col1">
@@ -108,21 +120,16 @@
          </UL>
     </UL>
   </P>
-   <font color="#2C3539"> <h3> Remarks </h3> </font>
-   <UL>
-   <LI> <a style="text-decoration: none" href="https://accendoreliability.com/sturges-rule-method-selecting-number-bins-histogram/"> Sturge's 
-          Rule</a> of selecting Bins for a given sample size.
-   </UL> 
-   </P>
+   
      <font color="#2C3539"> <h3> Study Materials </h3> </font>
-    <UL>
+    <ol class="a"> 
     <LI> Introduction to Modern Statistical Mechanics, D. Chandler.
     <LI> Modern Thermodynamics with Statistical Mechanics - Carl S. Helrich.
     <LI> Statistical and Thermal Physics with Computer Applications - Harvey Gould and Jan Tobochnik.
     <LI> Scientific Computing in Python - Abhijit Kar Gupta.
     <LI> Computatioal Physics problem solving with Computers - Landau, Paez, Bordeianu.
     <LI> Computational Methods for physics - Joel Franklin.
-    </UL>
+    </OL>
   
     
 </div></div>

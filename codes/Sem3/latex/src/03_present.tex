@@ -1,0 +1,369 @@
+\documentclass[compress,red]{beamer}
+\mode<presentation>
+
+%\usetheme[compress]{Boadilla}
+\usetheme{Warsaw}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\usefonttheme{serif}
+\useoutertheme[subsection=false]{smoothbars}
+\setbeamertemplate{navigation symbols}{}
+\hypersetup{pdfpagemode=FullScreen} % automatic full screen
+
+\usepackage{subfigure}
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{multimedia}
+\usepackage{hyperref}
+
+\definecolor{amit}{rgb}{0,1,.5}
+\definecolor{Red}{rgb}{1,0,0}
+\definecolor{Blue}{rgb}{0,0,1}
+\definecolor{Green}{rgb}{0,1,0}
+\definecolor{magenta}{rgb}{1,0,.6}
+\definecolor{lightblue}{rgb}{0,.5,1}
+\definecolor{lightpurple}{rgb}{.6,.4,1}
+\definecolor{gold}{rgb}{.6,.5,0}
+\definecolor{orange}{rgb}{1,0.4,0}
+\definecolor{hotpink}{rgb}{1,0,0.5}
+\definecolor{newcolor2}{rgb}{.5,.3,.5}
+\definecolor{newcolor}{rgb}{0,.3,1}
+\definecolor{newcolor3}{rgb}{1,0,.35}
+\definecolor{darkgreen1}{rgb}{0, .35, 0}
+\definecolor{darkgreen}{rgb}{0, .6, 0}
+\definecolor{darkred}{rgb}{.75,0,0}
+\xdefinecolor{olive}{cmyk}{0.64,0,0.95,0.4}
+\xdefinecolor{purpleish}{cmyk}{0.75,0.75,0,0}
+
+
+\def\pa{\partial}
+\newcommand{\ta}{\tau}
+\newcommand{\na}{\bf \nabla}
+\newcommand{\be}{\begin{equation*}}
+\newcommand{\ee}{\end{equation*}}
+\newcommand{\bea}{\begin{eqnarray*}}
+\newcommand{\eea}{\end{eqnarray*}}
+
+\newcommand{\stl}[1]{\mbox{$ \hspace{0.1em}
+      \stackrel{\rule{0.4pt}{0.275ex}\hspace{0.40em} \!\!\!
+      \overline{\hspace{0.06em}\vphantom{\rule{0.4pt}{0.0ex}}
+      \hphantom{\mbox{$\displaystyle #1$}}
+      \hspace{0.06em} } \!\!\!\hspace{0.40em}\rule{0.4pt}{0.275ex}}
+      {#1}\hspace{0.2em}$}}
+
+\title[\tiny Expert Committee Interview]{Problems in the Statics \& 
+Kinetics of Nematic Liquid Crystals}
+\author{Amit Kumar Bhattacharjee}
+\institute{Asutosh College, Kolkata} 
+\date{\today}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Outline}
+
+\frame{\frametitle{Organization}  
+\vspace{-.5cm}
+\begin{enumerate}
+\item Background of nematic mesophases; statics and kinetics. 
+\item Numerical techniques and benchmarks.
+\item Biaxiality of the isotropic-nematic interface; effect of rotational anchoring.
+\item Shape of nematic bubble in isotropic background.
+\item Phase ordering through spinodal kinetics.
+\item Ongoing work.
+\item Publications.
+\end{enumerate}
+}
+
+\section{Introduction}
+ 
+\frame{\frametitle{Background of nematogens}
+\begin{itemize}      
+\item Anisotropic molecules (rods,discs) having long range orientational order devoid of translational order.
+\item Rotational symmetry about the direction of order, {\it uniaxial} phase 
+(${\bf n} \leftrightarrow -{\bf n}$).
+\item No rotational symmetry : {\it biaxial} order(${\bf n} \leftrightarrow -{\bf n}$,
+${\bf l} \leftrightarrow -{\bf l}$).
+\item Alignment tensor order have five degrees of freedom, 2 degrees of order and 3 angles to specify 
+      principal direction. 
+\item $Q_{ij} = \frac{3}{2}S(n_in_j - \frac{1}{3}\delta_{ij}) + \frac{T}{2}(l_il_j - m_im_j) (i,j=x,y,z)$. 
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.4in, height=1.0in, angle=0]{lc.pdf} 
+\hspace{0.3 in}
+\includegraphics[width=1.4in, height=1.0in, angle=0]{biaxial.pdf} \\
+\end{figure}
+}
+
+\frame{\frametitle{Statics : Free energy, phase diagram}
+\begin{eqnarray*}
+F &=& \int d^3{\bf x} [\frac{1}{2}ATr{\bf Q}^{2} + \frac{1}{3}BTr{\bf Q}^{3} + 
+\frac{1}{4}C(Tr{\bf Q}^{2})^{2} + E^{\prime}(Tr{\bf Q}^{3})^{2} + \nonumber \\ 
+&& \frac{1}{2}L_{1}(\partial_{\alpha}Q_{\beta\gamma})(\partial_{\alpha}Q_{\beta\gamma}) 
++ \frac{1}{2}L_{2}(\partial_{\alpha}
+Q_{\alpha\beta})(\partial_{\gamma}Q_{\beta\gamma})].
+\end{eqnarray*}
+
+\begin{figure}
+\includegraphics[width=2.1in, height=1.6in, angle=0]{frener.pdf}
+\includegraphics[width=2.1in, height=1.8in]{phasediagram.pdf}
+\end{figure}
+}
+
+\frame{\frametitle{Kinetics}
+\begin{itemize}
+\item Landau-Ginzburg model-A dynamics for non-conserved order parameter. \\
+\item $\partial_{t}Q_{\alpha\beta}({\bf x}, t) = - \Gamma_{\alpha\beta\mu\nu} {\delta F\over\delta Q_{\mu\nu}}$, \\
+      $\Gamma_{\alpha\beta\mu\nu} = \Gamma[\delta_{\alpha\mu}\delta_{\beta\nu} +
+       \delta_{\alpha\nu}\delta_{\beta\mu} - \frac{2}{d}\delta_{\alpha\beta}\delta_{\mu\nu}]$. \\ \ \\ 
+
+\small
+\begin{block}{}
+$\partial_{t}Q_{\alpha\beta}({\bf x}, t) = - \Gamma \;[(A + C TrQ^{2})Q_{\alpha\beta}({\bf x}, t) +$ \\ 
+$(B + 6E^{\prime}TrQ^{3})\stl{Q^{2}_{\alpha\beta}({\bf x}, t)} - L_{1}\nabla^{2}Q_{\alpha\beta}({\bf x}, t) - 
+L_{2}\stl{\nabla_{\alpha}(\nabla_{\gamma}Q_{\beta\gamma}({\bf x}, t))}]$ \\  
+\end{block}
+
+\item Route to equilibrium $\Rightarrow$ \textcolor{blue}{nucleation} kinetics above $T^{*}$, \textcolor{blue}{spinodal} 
+      kinetics beneath $T^{*}$. 
+\item $Q_{\alpha\beta}({\bf x}, t) = \sum_{i=1}^{5}a_{i}({\bf x}, t)T^{i}_{\alpha\beta}$, 
+      \small ${\bf T}^{1} = \sqrt{\frac{3}{2}} \stl{\bf z \; z}, {\bf T}^{2} =  \sqrt{\frac{1}{2}} ({\bf x \; x - y \; y}),
+       {\bf T}^{3} = \sqrt{2}\; \stl{{\bf x \; y}}, {\bf T}^{4} = \sqrt{2}\; \stl{{\bf x \; z}},$ 
+       ${\bf T}^{5} = \sqrt{2}\; \stl{{\bf y \; z}}$.
+\end{itemize}
+}
+
+\frame{\frametitle{Problems at a glance}
+\begin{figure}
+\includegraphics[width=3.5in, height=2.5in, angle=0]{flowchart.pdf}
+\end{figure}
+}
+
+\section{Numerics}
+
+\frame{\frametitle{Numerical techniques}
+\begin{itemize}
+\item Method of lines 
+      \begin{itemize}
+      \item Spatial finite difference discretization.
+      \item Temporal integration using standard library.
+      \item Benchmark of {\it tanh} interface, ellipsoidal droplet, corsening. 
+      \item Performed in 2D on lattices, ranging from $256^2$ to $1024^2$.
+      \item Performed in 3D on lattices, ranging from $64^3$ to $256^3$.
+      \end{itemize}
+\item Spectral methods
+      \begin{itemize}
+      \item Space discretized on chebyshev grids $x_j=cos(\pi j/N)$.
+      \item Global interpolation retaining the spectral accuracy.
+      \end{itemize}
+\item High-performance computation
+      \begin{itemize}
+      \item Domain decomposition of the differentiation matrix and vector on a parallel 
+            cluster using standard library. 
+      \item Structured binary data storage using standard library.
+      \end{itemize}
+\end{itemize}
+}
+
+\section{IN interface}
+
+\frame{\frametitle{Isotropic-Nematic interface}
+\begin{itemize}
+\item Verification of ``de Gennes ansatz'' and limitations using method of lines.
+\item Biaxial nature of IN interface with planar anchoring using spectral method.
+\begin{figure}
+\subfigure[$\; \kappa = 0 $]{
+    \centering
+    \includegraphics[width=1.8in, height=1.4in, angle=0]{fig2_interface.pdf}
+}
+\subfigure[$\; \kappa = 18 $]{
+    \centering
+    \includegraphics[width=1.8in, height=1.4in, angle=0]{AKSTnew18.pdf}
+}
+\end{figure}
+\end{itemize} 
+}
+
+\frame{\frametitle{Contd..}
+\begin{itemize} 
+\item Director anchoring at the interface with tilted anchoring at boundary.
+\end{itemize} 
+\begin{figure}
+\subfigure[$\; \kappa = 36 $]{
+     \centering
+     \includegraphics[width=1.8in, height=1.4in, angle=0]{anc1.pdf}
+}
+\hspace{0.35 cm}
+\subfigure[$\; \kappa = 36 $]{
+     \centering
+     \includegraphics[width=1.8in, height=1.4in, angle=0]{anc3.pdf}
+}
+\end{figure}
+}
+
+\section{Droplet}
+
+\frame{\frametitle{Nematic droplet in isotropic background}
+\begin{itemize}
+\item Nematic bubble grow or shrink in the nucleation regime. 
+\item Contribution from the anisotropic surface tension $\Rightarrow$ shape change from circular to ellipsoidal.
+\item No approximation of surface free energy which automatically included in our formulation.
+\item Consequences : nucleation rate ($\propto e^{-B/k_BT}$) can be calculated exactly, apart from the prefactors.
+
+\begin{figure}
+\subfigure[$L_2 = 0 $]{
+     \centering
+     \includegraphics[width=0.8in, height=0.8in, angle=0]{circular.pdf}
+}
+\hspace{0.35 cm}
+\subfigure[$L_2 = 10L_1$]{
+     \centering
+     \includegraphics[width=0.8in, height=0.8in, angle=0]{ellip1.pdf}
+}
+\hspace{0.35 cm}
+\subfigure[$L_2 = -L_1$]{
+     \centering
+     \includegraphics[width=0.8in, height=0.8in, angle=0]{homo.pdf}
+}
+\end{figure}
+\end{itemize} 
+}
+
+\section{Corsening}
+
+\frame{\frametitle{Phase ordering kinetics}
+\setbeamercovered{transparent}
+\onslide<1->
+\underline{2D} \\
+\onslide<2->
+\begin{enumerate}
+\item Visualization and topological classification of point defects. 
+\item Structure of defect core of different homotopy class.
+\item Dynamical scaling exponent. \\
+\end{enumerate} 
+
+\onslide<3->
+\underline{3D} \\
+\begin{enumerate}
+\item Line defects in nematics; intercommutation of defect segments.
+\item Director configuration around the segment.
+\item Topological rigidity in biaxial nematics.
+\end{enumerate} 
+}
+
+\frame{\frametitle{Defects in nematics}
+\begin{itemize} 
+\item \textcolor{blue}{uniaxial} nematic defects are characterized through 
+$\pi_1(\mathbb{S}^2/\mathbb{Z}_2) = \mathbb{Z}_2$, having unstable integer and 
+stable half integer charged defects.
+\item \textcolor{blue}{biaxial} nematic defects are characterized through 
+$\pi_1(\mathbb{S}^3/\mathbb{D}_2) = \mathbb{Q}_8$, having a stable integer ($\bar C_0$ 
+class, $2\pi$ rotation of director) and three half-integer ($C_x, C_y, C_z$, $\pi$ rotation 
+of director) charged defects.
+\item Defects are visualized and classified through scalar order (movie).
+\item Textures (intensity $\propto sin^2[2\theta]$) show a subset while all the half-integer defect locations are identified in $S({\bf x}, t), T({\bf x},t)$.
+
+\begin{figure}
+\subfigure[]{
+     \centering
+     \includegraphics[width=0.6in, height=0.6in, angle=0]{Suniax.pdf}
+}
+\hspace{0.35 cm}
+\subfigure[]{
+     \centering
+     \includegraphics[width=0.62in, height=0.62in, angle=0]{2dS_00000100.pdf}
+}
+\hspace{0.35 cm}
+\subfigure[]{
+     \centering
+     \includegraphics[width=0.62in, height=0.62in, angle=0]{2dSch_00000100.pdf}
+}
+\end{figure}
+\end{itemize} 
+}
+
+\frame{\frametitle{Core structure; dynamical scaling}
+\begin{figure}
+\subfigure[]{
+     \centering
+     \includegraphics[width=1.3in, height=1.1in, angle=0]{fig5c_defprof.pdf}
+}
+\subfigure[$C_x$]{
+     \centering
+     \includegraphics[width=1.3in, height=1.1in, angle=0]{ST1.pdf}
+}
+\subfigure[$C_y$]{
+     \centering
+     \includegraphics[width=1.3in, height=1.1in, angle=0]{ST2.pdf}
+}
+\end{figure}
+\begin{itemize}
+\item Uniaxial dynamical scaling exponent $\alpha = 0.5\pm0.005 \; [L(t)\sim t^{\alpha}]$.
+\end{itemize}
+}
+
+\frame{\frametitle{Line defects in 3D}
+\begin{itemize}
+\item Point defects in 2D correspond to strings in 3D.
+\item Annihilation of point defect-antidefect correspond to formation and disappearance of loop.
+\item Line defects pass through each other through intercommutation i.e. exchanging segments (movie ; isosurface set to 0.054).
+\item Intercommutation of lines depend on the underlying abelian nature of the group elements of that 
+      particular homotopy group (Poenaru et.al. '77).
+\item No such signature seen in biaxial nematics !! 
+
+\begin{figure}
+\subfigure[]{
+     \centering
+     \includegraphics[width=1.0in, height=1.0in, angle=0]{3dSN_biax_45.pdf}
+}
+\subfigure[]{
+     \centering
+     \includegraphics[width=1.0in, height=1.0in, angle=0]{3dSN_biax_49.pdf}
+}
+\subfigure[]{
+     \centering
+     \includegraphics[width=1.0in, height=1.0in, angle=0]{3dSN_biax_51.pdf}
+}
+\end{figure}
+\end{itemize}
+}
+
+\section{Future work}
+
+\frame{\frametitle{Ongoing work}
+\begin{itemize}
+\item Nucleation kinetics in fluctuating nematics; nematic bubbles in 3D.
+\item Scaling exponent in 3D uniaxial and biaxial coarsening nematic (d=3,n=3).
+\item Scaling exponent of uniaxial nematic with space and spin dimension 2 (d=2,n=2).   
+\item Topological rigidity in biaxial nematics ? Interplay of energetics over topology. 
+\end{itemize}
+}
+
+\frame{\frametitle{Publications}
+\begin{itemize}
+\item Method of lines for the relaxational dynamics of nematic liquid crystals, PRE {\bf 78}, 026707 (2008).
+\item Biaxiality at the isotropic-nematic interface with planar anchoring, arXiv : 0906.2899 (submitted to PRE, 
+Rapid Comm.).
+\item Simulation and visualization of disclinations in nematic liquid crystals (to be submitted in ``Soft Matter'').
+\item Nucleation kinetics in fluctuating Landau-de Gennes theory for uniaxial nematics (in preparation).
+\item Effect of general anchoring of the director on the isotropic-nematic interface (in preparation).
+\end{itemize}
+}
+
+\begin{frame}
+\begin{center}
+{\bf \large \textcolor{gray}{Thanks for your attention}} 
+\end{center}
+\end{frame}
+
+\end{document}

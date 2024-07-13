@@ -1,0 +1,173 @@
+\documentclass{exam}
+
+% packages to use/include
+\usepackage{amsmath, amsthm, amssymb, amsfonts, bm}
+\usepackage{fullpage, graphicx, latexsym, enumitem}
+\usepackage{color, xcolor, subfigure, wrapfig}
+\usepackage{url, hyperref, authblk, verbatim}
+\usepackage{authblk,multicol,fancyvrb}
+%\usepackage{tgcursor}
+\newcommand\userinput[1]{\it{#1}}
+
+% definition of colours
+\definecolor{dark-gray}{gray}{0.05}
+\definecolor{skblue}{rgb}{0,0.08,0.45}
+\definecolor{alizarin}{rgb}{0.82,0.1,0.26}
+
+% First Page 
+\title{{\bf ASUTOSH COLLEGE} \\
+	{\large \bf (Affiliated to University of Calcutta)} \\ \ \\
+	{\LARGE \bf Certificate Course Examination 2022} \\
+    {Paper Name: {\bf \LaTeX}} \\
+    {Paper Type: {Multiple Choice Questionnaire}}
+    }
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+	
+\textbf{\Large Full Marks: 20 \hfill Time: 30 mins} \\ \ \\
+{\Large Answer {\it any} {\bf Ten} questions : \hfill {\bf 2X10=20}} \\
+	
+\begin{questions}
+		
+\question \Large Which one of the following command creates 10pt vertical space within the text immediately after mentioning the command? % C
+\begin{multicols}{2}
+\begin{choices}
+	  \choice \begin{verbatim} \vertical{10pt} \end{verbatim}
+	  \choice \begin{verbatim} \vspace{10pt} \end{verbatim}
+	  \choice \begin{verbatim} \vskip10pt \end{verbatim}
+	  \choice \begin{verbatim} \[10pt] \end{verbatim}
+\end{choices}
+\end{multicols}
+
+\question What is the command to print a {\it text} as margin note in right margin? % D	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} \marginnote{text} \end{verbatim}
+		\choice \begin{verbatim} \marginprint{text} \end{verbatim}
+		\choice \begin{verbatim} \marginpar[text] \end{verbatim}
+		\choice \begin{verbatim} \marginpar{text} \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question The symbol to indicate infinity ($\infty$) is produced in \LaTeX with % C	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} $\infinity$ \end{verbatim}
+		\choice \begin{verbatim} $\infy$ \end{verbatim}
+		\choice \begin{verbatim} $\infty$ \end{verbatim}
+		\choice \begin{verbatim} $\infinite$ \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question $\int_0^1$ symbol can be written with the command % A	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} $\int_0^1$ \end{verbatim}
+		\choice \begin{verbatim} $\integration_0^1$ \end{verbatim}
+		\choice \begin{verbatim} $\intl_0^1$ \end{verbatim}
+		\choice \begin{verbatim} $\lineint_0^1$ \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question Which of the following command is used to draw a horizontal line throughout the table? % D	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} \hrule \end{verbatim}
+		\choice \begin{verbatim} \Hrule \end{verbatim}
+		\choice \begin{verbatim} \Hline \end{verbatim}
+		\choice \begin{verbatim} \hline \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question Which package must be included to have text wrapped figure inside \LaTeX document? % B	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} wrapfigure \end{verbatim}
+		\choice \begin{verbatim} wrapfig \end{verbatim}
+		\choice \begin{verbatim} wrappedfig \end{verbatim}
+		\choice \begin{verbatim} wfig \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question The quantity $cos^{-1}(\theta)$ is written in \LaTeX ~ as % B	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} $\arccos(\theta)$ \end{verbatim}
+		\choice \begin{verbatim} $\cos^{–1}(\theta)$ \end{verbatim}
+		\choice \begin{verbatim} $\arccos{\theta}$ \end{verbatim}
+		\choice \begin{verbatim} $\cos inv{\theta}$ \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question Which of the following code block prints more than one equations without any equation number inside a
+\LaTeX document? % B	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} \begin{eqnarry*}
+		 \end{eqnarray*} \end{verbatim}
+		\choice \begin{verbatim} \begin{eqs*}
+		 \end{eqs*} \end{verbatim}
+		\choice \begin{verbatim} \begin{eqnarray}
+		 \end{eqnarry} \end{verbatim}
+		\choice \begin{verbatim} \begin{equations*}
+		 \end{equations*} \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question The matrix $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ is written in \LaTeX as  % A	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} \begin{pmatrix}
+				 a & b \\
+				 c & d
+		\end{pmatrix} \end{verbatim}
+		\choice \begin{verbatim} \begin{matrix}
+				 a & b \\
+				 c & d
+		\end{matrix} \end{verbatim}
+		\choice \begin{verbatim} \begin{vmatrix}
+				 a & b \\
+				 c & d
+		\end{vmatrix} \end{verbatim}
+		\choice \begin{verbatim} \begin{bmatrix}
+				 a & b \\
+				 c & d
+		\end{bmatrix} \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question The up arrow symbol ($\uparrow$) is written in \LaTeX  as % A	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} $\uparrow$ \end{verbatim}
+		\choice \begin{verbatim} $\Uparrow$ \end{verbatim}
+		\choice \begin{verbatim} $\UpArrow$ \end{verbatim}
+		\choice \begin{verbatim} $\upArrow$ \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question Each entry of the itemize list is declared with: % A	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} \item \end{verbatim}
+		\choice \begin{verbatim} \entry \end{verbatim}
+		\choice \begin{verbatim} \element \end{verbatim}
+		\choice \begin{verbatim} \type \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\question Which of the environment is meant for single equation? % D	
+\begin{multicols}{2}
+	\begin{choices}
+		\choice \begin{verbatim} equations \end{verbatim}
+		\choice \begin{verbatim} eqnarray \end{verbatim}
+		\choice \begin{verbatim} align \end{verbatim}
+		\choice \begin{verbatim} equation \end{verbatim}
+	\end{choices}
+\end{multicols}
+
+\end{questions}
+\end{document}

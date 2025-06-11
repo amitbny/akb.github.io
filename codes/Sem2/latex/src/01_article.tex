@@ -13,7 +13,7 @@
 
 % First Page 
 \title{\bf My First \LaTeX Article}
-\author{SEC Student Name \thanks{\href{mailto:sec.student@gmail.com}{Email: sec.student@gmail.com}}}
+\author{Certificate Course Candidate Name \thanks{\href{mailto:ccourse.student@gmail.com}{Email: ccourse.student@asutoshcollege.in}}}
 \affil{Department of Physics, Asutosh College, Kolkata 700026, India} 
 % affil won't work without package authblk
 
@@ -27,7 +27,14 @@ I want to learn this cool document preparation software that has multifold benef
 
 \section{Introduction}
 \label{intro}
-Since the days I have learned to use a computer, I was inclined to learn a document preparation system and in the search, I had seen Microsoft Word in Windows and Libreoffice in Linux operating system. However, I was looking for a better way of accountability of all the macros, citations, organization of the equations, tables etc. In the course of B.Sc. at Asutosh College, I have been bestowed a Skill-enhancement Course by the Calcutta University, where I am taking a Skill enhancement course to learn \LaTeX\cite{leslam}. This is my first \LaTeX article. $\displaystyle{\int\limits_0 ^ \pi \sin \theta\, d\theta}$
+Since the days I have learned to use a computer, I was inclined to learn a document preparation system and in the search, I had seen Microsoft Word in Windows and Libreoffice in Linux operating system. However, I was looking for a better way of accountability of all the macros, citations, organization of the equations, tables etc. In the course of B.Sc. at Asutosh College, I have been bestowed a Skill-enhancement Course by the Calcutta University, where I am taking a Skill enhancement course to learn \LaTeX\cite{leslam}. This is my first \LaTeX article. \\ 
+\noindent
+
+Some quick exposition to math mode: \\
+(a) Electron charge = $1.6 \times 10^{-9} C$. ~~ 
+(b) $\displaystyle{\int\limits_0 ^ \pi \sin \theta\, d\theta} = 2$. ~~ 
+(c) $\texttt{Fraction} = \frac{\texttt{Numerator}}{\texttt{Denominator}}$.
+
 
 \section{Topics I must Learn}
 \label{sec:1}
@@ -145,6 +152,43 @@ where,
 \label{nemord}
 \end{eqnarray} 
 This is how one can generate a sequence of equations all arranged in fashion.
+
+\subsection{Structured equations, matrices, reactions}
+``Maxwell's equations'' are named after James Clark Maxwell (1859), that are known as
+\begin{align}             
+	\vec{\pmb \nabla} \cdot \vec{\pmb E} \quad &=\quad\frac{\rho}{\epsilon_0}, &&\text{Gauss's Law} \label{eq:GL}\\      
+	\vec{\pmb \nabla} \cdot \vec{\pmb B} \quad &=\quad 0, &&\texttt{Gauss's Law for Magnetism} \label{eq:GLM}\\
+	\vec{\pmb \nabla} \times \vec{\pmb E} \quad &=-\frac{\partial{\vec{\pmb B}}}{\partial{t}}, &&\text{Faraday's Law of EM Induction} \label{eq:FL}\\ 
+	\vec{\pmb \nabla} \times \vec{\pmb B} \quad &=\quad \mu_0\left(\vec{\pmb J} + \epsilon_0\frac{\partial{\vec{\pmb E}}}{\partial{t}}\right), &&\text{Ampere's Circuital Law} \label{eq:ACL}
+\end{align}
+Equations \ref{eq:GL}, \ref{eq:GLM}, \ref{eq:FL}, and \ref{eq:ACL} are some of the most important in Physics. Maxwell not only showed by calculating the speed of electromagnetic (EM) wave to be equal to the speed of light - thus establishing the transverse EM nature of light - but also introduced the concept of ``{\it Displacement Current}'' to bring the continuity in the Circuital law. \\
+
+We also can define matrix equation ${\bold U}{\bold V} = {\bold W}$, where
+\begin{equation*}
+	\begin{pmatrix}
+		u_{11}&u_{12}&\dots&u_{1n}\\
+		u_{21}&u_{22}&\dots&u_{2n}\\
+		\vdots&\vdots&\ddots&\vdots\\
+		u_{n1}&u_{n2}&\dots&u_{nn}
+	\end{pmatrix}
+	\begin{bmatrix}
+		v_{1}\\
+		v_{2}\\
+		\vdots\\
+		v_{n}
+	\end{bmatrix}
+	=
+	\begin{pmatrix}
+		w_{1}\\
+		w_{2}\\
+		\vdots\\
+		w_{n}
+	\end{pmatrix}
+\end{equation*}
+
+Finally, we can define chemical reactions using \LaTeX as
+$$\mathrm{6CO_2+6H_2O \to C_6H_{12}O_6+6O_2},$$
+$$\mathrm{SO_4^{2-}+Ba^{2+} \to BaSO_4 }.$$
 
 \subsection{Inscribing Figure \& Text}
 \begin{wrapfigure}{l}{0.4\textwidth}

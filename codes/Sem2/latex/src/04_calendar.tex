@@ -1,0 +1,55 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[margin={1cm},noheadfoot]{geometry}
+\renewcommand*\thepage{}
+\usepackage{libertine}
+\usepackage{tikz}\usetikzlibrary{calendar}
+\tikzset{
+	every weekday/.style={
+		anchor=south west,
+		black,
+		name=weekday-\pgfcalendarcurrentmonth-\pgfcalendarcurrentweekday,
+		node contents=\%wt},
+	weekday above/.style={
+		if = {(day of month=1) [days={append after command={
+					node [at={(\tikzlastnode.north west)},
+					alias=@firstweekday,
+					every weekday]}}]},
+		if = {(day of month=2, day of month=3, day of month=4, day of month=5, day of month=6, day of month=7) [
+			days={append after command={
+					node [at={(@firstweekday.south west-|\tikzlastnode.south west)}, every weekday]}}]}},
+	wall calendar/.style={
+		week list, weekday above, day text=,
+		day and weekday/.style={
+			draw, outer sep=+0pt,
+			minimum width=\linewidth/7,
+			minimum height=\textheight/8},
+		day xshift=\linewidth/7,
+		day yshift=\textheight/8,
+		every day label/.style={
+			anchor=north east,
+			font=\Large\itshape,
+			node contents={\%d=},
+			inner sep=.7em},
+		every day/.append style={
+			day and weekday,
+			label={[every day label]north east:}
+		},
+		every weekday/.append style={
+			day and weekday,
+			minimum height=2em}
+	}
+}
+\newcommand*\Year{2025}
+\begin{document}\sffamily
+	\centering
+	\foreach \mon in {1,...,12}{%
+		{\Huge \pgfcalendarmonthname{\mon}\par}
+		{\huge \Year\par}
+		\vspace{2em}
+		\tikz\calendar[
+		dates=\Year-0\mon-01 to \Year-0\mon-last,
+		wall calendar,
+		];
+		
+		\pagebreak}
+\end{document}
